@@ -9,7 +9,7 @@
 
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/area1"
         android:layout_width="158dp"
         android:layout_height="165dp"
         android:layout_marginBottom="8dp"
@@ -27,7 +27,7 @@
         app:layout_constraintVertical_bias="0.945" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/deepness1"
         android:layout_width="130dp"
         android:layout_height="130dp"
         android:layout_marginBottom="8dp"
@@ -45,8 +45,8 @@
         app:layout_constraintVertical_bias="0.769" />
 
     <Button
-        android:id="@+id/button4"
-        android:layout_width="124dp"
+        android:id="@+id/cold1"
+        android:layout_width="127dp"
         android:layout_height="133dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
@@ -63,8 +63,8 @@
         app:layout_constraintVertical_bias="0.193" />
 
     <Button
-        android:id="@+id/button3"
-        android:layout_width="146dp"
+        android:id="@+id/level1"
+        android:layout_width="148dp"
         android:layout_height="153dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
@@ -81,7 +81,7 @@
         app:layout_constraintVertical_bias="0.096" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/area2"
         android:layout_width="57dp"
         android:layout_height="68dp"
         android:layout_marginBottom="8dp"
@@ -95,7 +95,7 @@
         app:layout_constraintVertical_bias="0.674" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/deepness2"
         android:layout_width="54dp"
         android:layout_height="66dp"
         android:layout_marginBottom="8dp"
@@ -110,7 +110,7 @@
         app:layout_constraintVertical_bias="0.615" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/cold2"
         android:layout_width="55dp"
         android:layout_height="62dp"
         android:layout_marginBottom="8dp"
@@ -124,7 +124,7 @@
         app:layout_constraintVertical_bias="0.362" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/level2"
         android:layout_width="63dp"
         android:layout_height="69dp"
         android:layout_marginBottom="8dp"
@@ -138,7 +138,7 @@
         app:layout_constraintVertical_bias="0.077" />
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/search1"
         android:layout_width="30dp"
         android:layout_height="32dp"
         android:layout_marginBottom="8dp"

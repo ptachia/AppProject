@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">My Application</string>
+    
+    <string-array name="places">
+        <item>צפון הגולן ואצבע הגליל</item>
+        <item>דרום הגולן והכנרת</item>
+        <item>גליל עליון</item>
+        <item>גליל תחתון</item>
+        <item>עמק יזרעאל</item>
+        <item>עמק בית שאן</item>
+        <item>כרמל</item>
+        <item>מישור החוף</item>
+        <item>שומרון ובנימין</item>
+        <item>הרי ירושלים</item>
+        <item>הרי יהודה</item>
+        <item>מדבר יהודה וים המלח</item>
+        <item>מצפה רמון</item>
+        <item>שדה בוקר</item>
+        <item>אילת</item>
+    </string-array>
+
 </resources>
