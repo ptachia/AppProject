@@ -74,7 +74,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/icon_deepness" />
 
-    <ImageView
+    <Button
         android:id="@+id/imageView2"
         android:layout_width="40dp"
         android:layout_height="40dp"
@@ -83,9 +83,9 @@
         android:layout_marginTop="56dp"
         app:layout_constraintStart_toEndOf="@+id/imageView14"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/pass1" />
+        android:background="@mipmap/pass1" />
 
-    <ImageView
+    <Button
         android:id="@+id/imageView6"
         android:layout_width="42dp"
         android:layout_height="40dp"
@@ -94,9 +94,9 @@
         android:layout_marginTop="56dp"
         app:layout_constraintStart_toEndOf="@+id/imageView2"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/pass1" />
+        android:background="@mipmap/pass1" />
 
-    <ImageView
+    <Button
         android:id="@+id/imageView7"
         android:layout_width="42dp"
         android:layout_height="40dp"
@@ -105,7 +105,7 @@
         android:layout_marginTop="56dp"
         app:layout_constraintStart_toEndOf="@+id/imageView6"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/pass1" />
+        android:background="@mipmap/pass1" />
 
     <ImageView
         android:id="@+id/imageView10"

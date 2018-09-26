@@ -127,18 +127,28 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.017" />
 
     <Button
         android:id="@+id/button10"
         android:layout_width="137dp"
         android:layout_height="46dp"
-        android:layout_marginBottom="36dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
         android:background="@mipmap/ba_li_maayan"
         app:layout_constraintBottom_toTopOf="@+id/area1"
         app:layout_constraintEnd_toStartOf="@+id/deepness2" />
+
+    <FrameLayout
+        android:id="@+id/main_fragment"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="16dp">
+
+    </FrameLayout>
 
 
 </android.support.constraint.ConstraintLayout>
