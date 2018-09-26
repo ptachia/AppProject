@@ -19,4 +19,7 @@
         <item>אילת</item>
     </string-array>
 
+    <string name="share">שתפו</string>
+    <string name="about">אודות</string>
+
 </resources>
