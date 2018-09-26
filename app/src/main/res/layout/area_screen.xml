@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@mipmap/main_background"
+    android:background="@drawable/main_background"
     android:layout_height="match_parent">
 
 
@@ -12,7 +12,7 @@
         android:id="@+id/imageView"
         android:layout_width="386dp"
         android:layout_height="439dp"
-        android:background="@mipmap/area_screen4"
+        android:background="@drawable/area_screen4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,7 +29,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:background="@mipmap/search"
+        android:background="@drawable/search"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -48,7 +48,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.969"
-        android:background="@mipmap/circles" />
+        app:srcCompat="@drawable/circles" />
 
     <ImageView
         android:id="@+id/imageView4"
@@ -59,7 +59,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.674"
-        app:srcCompat="@mipmap/group_66" />
+        app:srcCompat="@drawable/group_66" />
 
     <SeekBar
         android:id="@+id/radius"
@@ -87,7 +87,7 @@
         app:layout_constraintStart_toEndOf="@+id/radius"
         app:layout_constraintTop_toTopOf="@+id/radius"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@mipmap/group_68" />
+        app:srcCompat="@drawable/group_68" />
 
     <TextView
         android:id="@+id/radiusIndicator"
