@@ -2,6 +2,7 @@
     <string name="app_name">My Application</string>
     
     <string-array name="places">
+        <item>המיקום שלי</item>
         <item>צפון הגולן ואצבע הגליל</item>
         <item>דרום הגולן והכנרת</item>
         <item>גליל עליון</item>

@@ -2,7 +2,6 @@
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:background="@mipmap/main_background"
     android:layout_height="match_parent">
@@ -20,49 +19,35 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="246dp"
-        android:layout_height="384dp"
+        android:layout_height="464dp"
+        android:layout_marginTop="8dp"
         android:background="@mipmap/level_back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/first"
+        app:layout_constraintVertical_bias="0.555" />
 
-    <Button
-        android:id="@+id/button11"
-        android:layout_width="30dp"
-        android:layout_height="32dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="3dp"
-        android:background="@mipmap/search"
+
+    <SeekBar
+        android:id="@+id/seekbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="228dp"
+        android:layout_marginTop="8dp"
+        android:rotation="270"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-
-    <SeekBar
-        android:id="@+id/radius"
-        android:layout_width="281dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="192dp"
-        android:rotation="270"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/navigate2"
+        app:layout_constraintVertical_bias="1.0" />
 
 
     <ImageView
         android:id="@+id/imageView8"
-        android:layout_width="386dp"
+        android:layout_width="match_parent"
         android:layout_height="11dp"
         android:layout_marginTop="72dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -72,18 +57,18 @@
         app:srcCompat="@mipmap/pass3" />
 
     <ImageView
-        android:id="@+id/imageView14"
+        android:id="@+id/navigate2"
         android:layout_width="75dp"
         android:layout_height="85dp"
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
-        app:layout_constraintStart_toEndOf="@+id/imageView6"
+        app:layout_constraintStart_toEndOf="@+id/second"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/icon_level" />
 
     <Button
-        android:id="@+id/imageView2"
+        android:id="@+id/third"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginLeft="80dp"
@@ -94,45 +79,47 @@
         android:background="@mipmap/pass1" />
 
     <Button
-        android:id="@+id/imageView6"
+        android:id="@+id/second"
         android:layout_width="42dp"
         android:layout_height="40dp"
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="56dp"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toEndOf="@+id/third"
         app:layout_constraintTop_toTopOf="parent"
         android:background="@mipmap/pass1" />
 
     <Button
-        android:id="@+id/imageView7"
+        android:id="@+id/first"
         android:layout_width="42dp"
         android:layout_height="40dp"
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="56dp"
-        app:layout_constraintStart_toEndOf="@+id/imageView14"
+        app:layout_constraintStart_toEndOf="@+id/navigate2"
         app:layout_constraintTop_toTopOf="parent"
         android:background="@mipmap/pass1" />
 
     <ImageView
         android:id="@+id/imageView10"
-        android:layout_width="206dp"
-        android:layout_height="44dp"
-        android:layout_marginBottom="128dp"
-        app:layout_constraintBottom_toTopOf="@+id/radius"
+        android:layout_width="198dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="48dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.198"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/second"
         app:srcCompat="@mipmap/lohem" />
 
     <ImageView
         android:id="@+id/imageView11"
         android:layout_width="206dp"
         android:layout_height="41dp"
-        android:layout_marginTop="132dp"
+        android:layout_marginTop="144dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.207"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radius"
+        app:layout_constraintTop_toBottomOf="@+id/seekbar"
         app:srcCompat="@mipmap/family" />
 
 </android.support.constraint.ConstraintLayout>

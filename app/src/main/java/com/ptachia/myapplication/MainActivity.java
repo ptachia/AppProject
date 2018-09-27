@@ -1,60 +1,64 @@
 package com.ptachia.myapplication;
 
-import android.support.v4.app.Fragment;
+import android.os.SystemClock;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 import android.support.v7.widget.Toolbar;
 
-public class MainActivity extends AppCompatActivity  {
+public class MainActivity extends AppCompatActivity implements MainApp.inflateInterface {
 
     Button area1, area2, deepness1, deepness2, cold1, cold2, level1, level2;
-    Toolbar mToolbar;
-    Fragment areaF, deepnessF, coldF, levelF;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        area1 = findViewById(R.id.area1);
-        area2 = findViewById(R.id.area2);
-        deepness1 = findViewById(R.id.deepness1);
-        deepness2 = findViewById(R.id.deepness2);
-        cold1 = findViewById(R.id.cold1);
-        cold2 = findViewById(R.id.cold2);
-        level1 = findViewById(R.id.level1);
-        level2 = findViewById(R.id.level2);
-        mToolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(mToolbar);
-
-        area1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                areaF = new AreaScreen();
-                android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
-                fragmentManager.beginTransaction().add(R.id.main_fragment, areaF).addToBackStack(null).commit();
-            }
-        });
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.main_fragment, new MainApp()).addToBackStack(null).commit();
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_items, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) { //TODO fill it and verify that it affects on all the menus in all screens
-        int id = item.getItemId();
-        switch (id) {
-            case R.id.share:
-                break;
-            case R.id.about:
-                break;
+    public void coldClicked(boolean addToStack) {
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        if (addToStack){
+            ft.replace(R.id.main_fragment, new ColdScreen()).addToBackStack(null).commit();
+        } else {
+            ft.replace(R.id.main_fragment, new ColdScreen()).commit();
         }
-        return super.onOptionsItemSelected(item);
+
+    }
+
+    @Override
+    public void levelClicked(boolean addToStack) {
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        if (addToStack){
+            ft.replace(R.id.main_fragment, new LevelScreen()).addToBackStack(null).commit();
+        } else {
+            ft.replace(R.id.main_fragment, new LevelScreen()).commit();
+        }
+    }
+
+    @Override
+    public void areaClicked(boolean addToStack) {
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        if (addToStack){
+            ft.replace(R.id.main_fragment, new AreaScreen()).addToBackStack(null).commit();
+        } else {
+            ft.replace(R.id.main_fragment, new AreaScreen()).commit();
+        }
+    }
+
+    @Override
+    public void deepnessClicked(boolean addToStack) {
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        if (addToStack){
+            ft.replace(R.id.main_fragment, new DeepnessScreen()).addToBackStack(null).commit();
+        } else {
+            ft.replace(R.id.main_fragment, new DeepnessScreen()).commit();
+        }
     }
 }

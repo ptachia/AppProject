@@ -8,11 +8,9 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/title4"
         android:layout_width="112dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
         android:text="שם המעיין"
         android:textSize="30sp"
         app:fontFamily="@font/amatic_sc"
@@ -22,11 +20,10 @@
         app:layout_constraintVertical_bias="0.531" />
 
     <TextView
-        android:id="@+id/title3"
+        android:id="@+id/description"
         android:layout_width="354dp"
         android:layout_height="187dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
         android:text="הסבר על המעיין"
         android:textSize="14sp"
         app:fontFamily="@font/amatic_sc"
@@ -36,8 +33,8 @@
         app:layout_constraintVertical_bias="0.922" />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="408dp"
+        android:id="@+id/spring_picture"
+        android:layout_width="match_parent"
         android:layout_height="194dp"
         android:background="#ff34"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -47,27 +44,9 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <Button
-        android:id="@+id/button11"
-        android:layout_width="30dp"
-        android:layout_height="32dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:background="@mipmap/search"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
 
     <Button
-        android:id="@+id/imageView14"
+        android:id="@+id/navigate2"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginLeft="36dp"
@@ -78,74 +57,68 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/imageView12"
+        android:id="@+id/navigate1"
         android:layout_width="28dp"
         android:layout_height="45dp"
-        android:layout_marginLeft="52dp"
         android:layout_marginStart="52dp"
         android:layout_marginTop="172dp"
+        android:background="@mipmap/group_66"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@mipmap/group_66" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/third"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="172dp"
-        app:layout_constraintStart_toEndOf="@+id/imageView14"
+        app:layout_constraintStart_toEndOf="@+id/navigate2"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/circle" />
 
     <Button
-        android:id="@+id/imageView13"
+        android:id="@+id/deepness"
         android:layout_width="29dp"
         android:layout_height="25dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/imageView2"
-        android:background="@mipmap/group_81" />
+        android:background="@mipmap/group_81"
+        app:layout_constraintEnd_toEndOf="@+id/third"
+        app:layout_constraintStart_toStartOf="@+id/third"
+        app:layout_constraintTop_toTopOf="@+id/third" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/second"
         android:layout_width="50dp"
         android:layout_height="49dp"
         android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="172dp"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toEndOf="@+id/third"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/circle" />
 
 
-
     <Button
-        android:id="@+id/imageView15"
+        android:id="@+id/area"
         android:layout_width="35dp"
         android:layout_height="25dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:background="@mipmap/gps"
         app:layout_constraintBottom_toBottomOf="@+id/title7"
-        app:layout_constraintEnd_toEndOf="@+id/imageView6"
+        app:layout_constraintEnd_toEndOf="@+id/second"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView6"
-        app:layout_constraintTop_toTopOf="@+id/imageView6"
-        app:layout_constraintVertical_bias="0.0"
-        android:background="@mipmap/gps" />
+        app:layout_constraintStart_toStartOf="@+id/second"
+        app:layout_constraintTop_toTopOf="@+id/second"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/first"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginLeft="12dp"
@@ -162,7 +135,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="172dp"
-        app:layout_constraintStart_toEndOf="@+id/imageView6"
+        app:layout_constraintStart_toEndOf="@+id/second"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/circle" />
 
@@ -180,10 +153,10 @@
         android:text="חם/קר"
         android:textSize="12sp"
         app:fontFamily="@font/amatic_sc"
-        app:layout_constraintEnd_toEndOf="@+id/imageView7"
+        app:layout_constraintEnd_toEndOf="@+id/first"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView7"
-        app:layout_constraintTop_toTopOf="@+id/imageView7" />
+        app:layout_constraintStart_toStartOf="@+id/first"
+        app:layout_constraintTop_toTopOf="@+id/first" />
 
     <TextView
         android:id="@+id/title5"
@@ -198,10 +171,10 @@
         android:text="עומק"
         android:textSize="12sp"
         app:fontFamily="@font/amatic_sc"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="@+id/third"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/imageView2" />
+        app:layout_constraintStart_toStartOf="@+id/third"
+        app:layout_constraintTop_toTopOf="@+id/third" />
 
     <TextView
         android:id="@+id/title7"
@@ -216,10 +189,10 @@
         android:text="איזור"
         android:textSize="12sp"
         app:fontFamily="@font/amatic_sc"
-        app:layout_constraintEnd_toEndOf="@+id/imageView6"
+        app:layout_constraintEnd_toEndOf="@+id/second"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView6"
-        app:layout_constraintTop_toTopOf="@+id/imageView6" />
+        app:layout_constraintStart_toStartOf="@+id/second"
+        app:layout_constraintTop_toTopOf="@+id/second" />
 
     <TextView
         android:id="@+id/title6"
@@ -240,39 +213,35 @@
         app:layout_constraintTop_toTopOf="@+id/imageView9" />
 
     <Button
-        android:id="@+id/imageView18"
+        android:id="@+id/level"
         android:layout_width="35dp"
         android:layout_height="25dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:background="@mipmap/ruler"
         app:layout_constraintBottom_toBottomOf="@+id/title6"
         app:layout_constraintEnd_toEndOf="@+id/imageView9"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/imageView9"
         app:layout_constraintTop_toTopOf="@+id/imageView9"
-        app:layout_constraintVertical_bias="0.0"
-        android:background="@mipmap/ruler" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/imageView16"
+        android:id="@+id/temprature"
         android:layout_width="35dp"
         android:layout_height="25dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:background="@mipmap/fire_white"
         app:layout_constraintBottom_toBottomOf="@+id/title2"
-        app:layout_constraintEnd_toEndOf="@+id/imageView7"
+        app:layout_constraintEnd_toEndOf="@+id/first"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView7"
-        app:layout_constraintTop_toTopOf="@+id/imageView7"
-        app:layout_constraintVertical_bias="0.0"
-        android:background="@mipmap/fire_white" />
+        app:layout_constraintStart_toStartOf="@+id/first"
+        app:layout_constraintTop_toTopOf="@+id/first"
+        app:layout_constraintVertical_bias="0.0" />
 
 </android.support.constraint.ConstraintLayout>
