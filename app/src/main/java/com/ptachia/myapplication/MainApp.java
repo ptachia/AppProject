@@ -104,15 +104,19 @@ public class MainApp extends Fragment {
         });
 
         start_search1 = view.findViewById(R.id.start_search);
-        start_search2 = view.findViewById(R.id.start_search1);
-
-        //TODO remove it (it's a test)
-        removeIt = (Button) view.findViewById(R.id.delItRemoveIt);
-        removeIt.setOnClickListener(new View.OnClickListener() {
+        start_search1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 inflate_listener.getSpringClicked(true);
             }
         });
+        start_search2 = view.findViewById(R.id.start_search1);
+        start_search2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                inflate_listener.getSpringClicked(true);
+            }
+        });
+
     }
 }

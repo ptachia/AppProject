@@ -39,6 +39,38 @@ public class SpringsListScreen extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        tempParam = view.findViewById(R.id.tempParam);
+        tempParam.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                inflate_listener.coldClicked(false);
+            }
+        });
+
+        difficultParam = view.findViewById(R.id.difficultParam);
+        difficultParam.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                inflate_listener.levelClicked(false);
+            }
+        });
+
+        areaParam = view.findViewById(R.id.areaParam);
+        areaParam.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                inflate_listener.areaClicked(false);
+            }
+        });
+
+        deepParam = view.findViewById(R.id.deepParam);
+        deepParam.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                inflate_listener.deepnessClicked(false);
+            }
+        });
+
         recyclerView = (RecyclerView) view.findViewById(R.id.rvSprings);
         mAdapter = new SpringsAdapter(springsList);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(MainActivity.getContext());

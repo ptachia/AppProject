@@ -92,6 +92,12 @@ public class ColdScreen extends Fragment {
         });
 
         start_search = view.findViewById(R.id.start_search);
+        start_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                inflate_listener.getSpringClicked(true);
+            }
+        });
     }
 
 }

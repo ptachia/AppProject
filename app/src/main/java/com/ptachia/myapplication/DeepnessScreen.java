@@ -14,7 +14,7 @@ import android.widget.SeekBar;
 public class DeepnessScreen extends Fragment {
 
     SeekBar deepness_seekbar;
-    Button cold_button, area_button, level_button, start_search;
+    Button cold_button, area_button, level_button, start_search, start_search1, start_search2;
     MainApp.inflateInterface inflate_listener;
 
     @Override
@@ -78,7 +78,26 @@ public class DeepnessScreen extends Fragment {
         });
 
         start_search = view.findViewById(R.id.start_search);
-
+        start_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                inflate_listener.getSpringClicked(true);
+            }
+        });
+        start_search1 = view.findViewById(R.id.half_circle);
+        start_search1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                inflate_listener.getSpringClicked(true);
+            }
+        });
+        start_search2 = view.findViewById(R.id.half_circle1);
+        start_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                inflate_listener.getSpringClicked(true);
+            }
+        });
     }
 
 }

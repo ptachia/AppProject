@@ -34,7 +34,7 @@
         app:srcCompat="@mipmap/circles" />
 
     <Button
-        android:id="@+id/srart_search"
+        android:id="@+id/start_search"
         android:layout_width="41dp"
         android:layout_height="81dp"
         android:layout_marginBottom="8dp"
