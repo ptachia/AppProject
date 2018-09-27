@@ -1,6 +1,5 @@
 package com.ptachia.myapplication;
 
-import android.os.SystemClock;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,7 +10,7 @@ public class MainActivity extends AppCompatActivity implements MainApp.inflateIn
 
     Button area1, area2, deepness1, deepness2, cold1, cold2, level1, level2;
 
-
+    public static UserData userData = new UserData();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +19,7 @@ public class MainActivity extends AppCompatActivity implements MainApp.inflateIn
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.main_fragment, new MainApp()).addToBackStack(null).commit();
     }
+
 
     @Override
     public void coldClicked(boolean addToStack) {

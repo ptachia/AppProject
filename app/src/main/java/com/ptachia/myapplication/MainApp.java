@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 
 public class MainApp extends Fragment {
 
-    Button area1, area2, deepness1, deepness2, cold1, cold2, level1, level2;
+    Button area1, area2, deepness1, deepness2, cold1, cold2, level1, level2, start_search1, start_search2;
     inflateInterface inflate_listener;
 
     public interface inflateInterface{
@@ -101,5 +101,10 @@ public class MainApp extends Fragment {
                 inflate_listener.levelClicked(true);
             }
         });
+
+        start_search1 = view.findViewById(R.id.start_search);
+        start_search2 = view.findViewById(R.id.start_search1);
+
+
     }
 }

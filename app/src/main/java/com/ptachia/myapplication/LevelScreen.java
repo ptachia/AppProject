@@ -14,7 +14,7 @@ import android.widget.SeekBar;
 public class LevelScreen extends Fragment {
 
     SeekBar level_seekbar;
-    Button cold_button, area_button, deepness_button;
+    Button cold_button, area_button, deepness_button, continue1, continue2, start_search;
     MainApp.inflateInterface inflate_listener;
 
     @Override
@@ -36,7 +36,22 @@ public class LevelScreen extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
         level_seekbar = view.findViewById(R.id.seekbar);
+        level_seekbar.setMax(4);
+        level_seekbar.setProgress(MainActivity.userData.my_level);
+        level_seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                MainActivity.userData.my_level = progress;
+            }
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+            }
+        });
 
         cold_button = view.findViewById(R.id.first);
         cold_button.setOnClickListener(new View.OnClickListener() {
@@ -61,6 +76,24 @@ public class LevelScreen extends Fragment {
                 inflate_listener.deepnessClicked(false);
             }
         });
+
+        continue1 = view.findViewById(R.id.half_circle);
+        continue2 = view.findViewById(R.id.half_circle1);
+        continue1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                inflate_listener.areaClicked(true);
+            }
+        });
+        continue2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                inflate_listener.areaClicked(true);
+            }
+        });
+
+        start_search = view.findViewById(R.id.start_search);
+
     }
 
 }

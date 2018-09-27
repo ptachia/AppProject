@@ -14,7 +14,7 @@ import android.widget.SeekBar;
 public class ColdScreen extends Fragment {
 
     SeekBar temprature_seekbar;
-    Button deepness_button, area_button, level_button;
+    Button deepness_button, area_button, level_button, continue1, continue2, start_search;
     MainApp.inflateInterface inflate_listener;
 
     @Override
@@ -37,6 +37,20 @@ public class ColdScreen extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         temprature_seekbar = view.findViewById(R.id.seekbar);
+        temprature_seekbar.setMax(4);
+        temprature_seekbar.setProgress(MainActivity.userData.my_temprature);
+        temprature_seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                MainActivity.userData.my_temprature = progress;
+            }
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+            }
+        });
 
         deepness_button = view.findViewById(R.id.third);
         deepness_button.setOnClickListener(new View.OnClickListener() {
@@ -62,6 +76,22 @@ public class ColdScreen extends Fragment {
             }
         });
 
+        continue1 = view.findViewById(R.id.half_circle);
+        continue2 = view.findViewById(R.id.half_circle1);
+        continue1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                inflate_listener.levelClicked(true);
+            }
+        });
+        continue2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                inflate_listener.levelClicked(true);
+            }
+        });
+
+        start_search = view.findViewById(R.id.start_search);
     }
 
 }

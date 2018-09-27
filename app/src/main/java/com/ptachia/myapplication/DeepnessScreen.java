@@ -14,7 +14,7 @@ import android.widget.SeekBar;
 public class DeepnessScreen extends Fragment {
 
     SeekBar deepness_seekbar;
-    Button cold_button, area_button, level_button;
+    Button cold_button, area_button, level_button, start_search;
     MainApp.inflateInterface inflate_listener;
 
     @Override
@@ -36,7 +36,22 @@ public class DeepnessScreen extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
         deepness_seekbar = view.findViewById(R.id.seekbar);
+        deepness_seekbar.setMax(4);
+        deepness_seekbar.setProgress(MainActivity.userData.my_deepness);
+        deepness_seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                MainActivity.userData.my_deepness = progress;
+            }
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+            }
+        });
 
         cold_button = view.findViewById(R.id.first);
         cold_button.setOnClickListener(new View.OnClickListener() {
@@ -61,6 +76,9 @@ public class DeepnessScreen extends Fragment {
                 inflate_listener.levelClicked(false);
             }
         });
+
+        start_search = view.findViewById(R.id.start_search);
+
     }
 
 }
