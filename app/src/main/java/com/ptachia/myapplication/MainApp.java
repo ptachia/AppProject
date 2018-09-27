@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 
 public class MainApp extends Fragment {
 
-    Button area1, area2, deepness1, deepness2, cold1, cold2, level1, level2, start_search1, start_search2;
+    Button area1, area2, deepness1, deepness2, cold1, cold2, level1, level2, removeIt, start_search1, start_search2;
     inflateInterface inflate_listener;
 
     public interface inflateInterface{
@@ -20,6 +20,7 @@ public class MainApp extends Fragment {
         public void levelClicked(boolean addToStack);
         public void areaClicked(boolean addToStack);
         public void deepnessClicked(boolean addToStack);
+        public void getSpringClicked(boolean addToStack);
     }
 
     @Override
@@ -105,6 +106,13 @@ public class MainApp extends Fragment {
         start_search1 = view.findViewById(R.id.start_search);
         start_search2 = view.findViewById(R.id.start_search1);
 
-
+        //TODO remove it (it's a test)
+        removeIt = (Button) view.findViewById(R.id.delItRemoveIt);
+        removeIt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                inflate_listener.getSpringClicked(true);
+            }
+        });
     }
 }

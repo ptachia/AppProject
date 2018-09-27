@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">ארץ המעיינות</string>
     
     <string-array name="places">
         <item>המיקום שלי</item>

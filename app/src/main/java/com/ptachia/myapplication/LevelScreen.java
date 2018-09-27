@@ -22,7 +22,7 @@ public class LevelScreen extends Fragment {
         super.onAttach(context);
         try {
             inflate_listener = (MainApp.inflateInterface) context;
-        }catch (ClassCastException e){
+        } catch (ClassCastException e){
             throw new ClassCastException(context.toString());
         }
     }

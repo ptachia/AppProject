@@ -1,20 +1,26 @@
 package com.ptachia.myapplication;
 
+import android.content.Context;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Window;
 import android.widget.Button;
-import android.support.v7.widget.Toolbar;
 
-public class MainActivity extends AppCompatActivity implements MainApp.inflateInterface {
+public class MainActivity
+        extends AppCompatActivity
+            implements MainApp.inflateInterface {
 
     Button area1, area2, deepness1, deepness2, cold1, cold2, level1, level2;
 
     public static UserData userData = new UserData();
+    private static Context mContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        mContext = getApplicationContext();
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.main_fragment, new MainApp()).addToBackStack(null).commit();
@@ -29,7 +35,6 @@ public class MainActivity extends AppCompatActivity implements MainApp.inflateIn
         } else {
             ft.replace(R.id.main_fragment, new ColdScreen()).commit();
         }
-
     }
 
     @Override
@@ -60,5 +65,19 @@ public class MainActivity extends AppCompatActivity implements MainApp.inflateIn
         } else {
             ft.replace(R.id.main_fragment, new DeepnessScreen()).commit();
         }
+    }
+
+    @Override
+    public void getSpringClicked(boolean addToStack){
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        if (addToStack){
+            ft.replace(R.id.main_fragment, new SpringsListScreen()).addToBackStack(null).commit();
+        } else {
+            ft.replace(R.id.main_fragment, new SpringsListScreen()).commit();
+        }
+    }
+
+    public static Context getContext() {
+        return mContext;
     }
 }

@@ -28,14 +28,9 @@ public class SpringScreen extends Fragment {
         level_button = view.findViewById(R.id.level);
         area_button = view.findViewById(R.id.area);
         deepness_button = view.findViewById(R.id.deepness);
-
         nav1 = view.findViewById(R.id.navigate1);
         nav2 = view.findViewById(R.id.navigate2);
-
         spring_image = view.findViewById(R.id.spring_picture);
-
-
-
     }
 
 }

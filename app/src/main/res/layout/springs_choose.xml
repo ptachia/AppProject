@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/main_background"
+    android:orientation="vertical"
+    tools:layout_editor_absoluteY="25dp">
+
+    <Button
+        android:id="@+id/deepParam"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="92dp"
+        android:background="@mipmap/icon_deepness2"
+        app:layout_constraintEnd_toStartOf="@id/areaParam"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/areaParam"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="92dp"
+        android:background="@mipmap/icon_area2"
+        app:layout_constraintEnd_toStartOf="@id/difficultParam"
+        app:layout_constraintStart_toEndOf="@+id/deepParam"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/difficultParam"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="92dp"
+        android:background="@mipmap/icon_level2"
+        app:layout_constraintEnd_toStartOf="@id/tempParam"
+        app:layout_constraintStart_toEndOf="@+id/areaParam"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/tempParam"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="92dp"
+        android:background="@mipmap/icon_cold2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/difficultParam"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvSprings"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="200dp"
+        android:scrollbars="vertical"
+        android:layoutDirection="rtl"/>
+
+
+</android.support.constraint.ConstraintLayout>
