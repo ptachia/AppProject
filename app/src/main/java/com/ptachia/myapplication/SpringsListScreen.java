@@ -10,15 +10,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class SpringsListScreen extends Fragment {
 
     private Button tempParam, difficultParam, deepParam, areaParam;
     private MainApp.inflateInterface inflate_listener;
-    private List<SpringItem> springsList = new ArrayList<>();
+    private List<RetroSpring> springsList = new ArrayList<>();
     private RecyclerView recyclerView;
     private SpringsAdapter mAdapter;
 
@@ -81,33 +87,29 @@ public class SpringsListScreen extends Fragment {
     }
 
     private void prepareSpringsData(){
-        String path;
-        SpringItem springItem;
+        APIInterface apiInterface = RetrofitClientInstance.getRetrofitInstance().create(APIInterface.class);
+        Call<List<RetroSpring>> call = apiInterface.searchSpring(new SearchSpringObj("מעיין")); //todo change prameters..
+        call.enqueue(new Callback<List<RetroSpring>>() {
 
-        path = "C:\\NitzanApp\\AppProject\\app\\src\\main\\res\\mipmap-xxhdpi\\app_mayan_logo_01.png";
-        springItem = new SpringItem("סתם מעין","מעין חמוד ונחמד שאוהב את כל אחד",path);
-        springsList.add(springItem);
+            @Override
+            public void onResponse(Call<List<RetroSpring>> call, Response<List<RetroSpring>> response) {
+//                System.out.println(response.body().get(0).getNameMayan());
+                generateDataList(response.body());
+            }
 
-        path = "C:\\NitzanApp\\AppProject\\app\\src\\main\\res\\mipmap-xxhdpi\\bird.png";
-        springItem = new SpringItem("סתם מעין2","מעין חמוד ונחמד שאוהב את כל אחד",path);
-        springsList.add(springItem);
+            @Override
+            public void onFailure(Call<List<RetroSpring>> call, Throwable t) {
+//                System.out.println(t.getMessage());
+                Toast.makeText(getActivity(), "Something got wrong with the search... Sorry. Try Again",
+                                Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
 
-        path = "C:\\NitzanApp\\AppProject\\app\\src\\main\\res\\mipmap-xxhdpi\\bird.png";
-        springItem = new SpringItem("סתם מעין23","מעין חמוד ונחמד שאוהב את כל אחד",path);
-        springsList.add(springItem);
-
-        path = "C:\\NitzanApp\\AppProject\\app\\src\\main\\res\\mipmap-xxhdpi\\bird.png";
-        springItem = new SpringItem("סתם מעין342","מעין חמוד ונחמד שאוהב את כל אחד",path);
-        springsList.add(springItem);
-
-        path = "C:\\NitzanApp\\AppProject\\app\\src\\main\\res\\mipmap-xxhdpi\\bird.png";
-        springItem = new SpringItem("סתם מעין3432","מעין חמוד ונחמד שאוהב את כל אחד",path);
-        springsList.add(springItem);
-
-        path = "C:\\NitzanApp\\AppProject\\app\\src\\main\\res\\mipmap-xxhdpi\\bird.png";
-        springItem = new SpringItem("סתם מעין33332","מעין חמוד ונחמד שאוהב את כל אחד",path);
-        springsList.add(springItem);
-
+    private void generateDataList(List<RetroSpring> retroSpring){
+        for (int i = 0; i < retroSpring.size(); i++){
+            springsList.add(retroSpring.get(i));
+        }
         mAdapter.notifyDataSetChanged();
     }
 }
