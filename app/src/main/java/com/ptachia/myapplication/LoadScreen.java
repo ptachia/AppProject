@@ -15,7 +15,7 @@ public class LoadScreen extends AppCompatActivity {
             public void run() {
                 super.run();
                 try {
-                    sleep(1500);
+                    sleep(800);
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(intent);
                     finish();

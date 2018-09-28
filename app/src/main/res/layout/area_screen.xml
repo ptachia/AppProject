@@ -10,14 +10,15 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="389dp"
-        android:layout_height="420dp"
+        android:layout_width="match_parent"
+        android:layout_height="508dp"
+        android:layout_marginTop="8dp"
         android:background="@mipmap/area_screen6"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/navigate2" />
 
 
     <ImageView
@@ -48,9 +49,9 @@
 
     <SeekBar
         android:id="@+id/seekbar"
-        android:layout_width="281dp"
+        android:layout_width="270dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="25dp"
         android:layout_marginLeft="44dp"
         android:layout_marginStart="44dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -75,7 +76,7 @@
         android:id="@+id/radiusIndicator"
         android:layout_width="79dp"
         android:layout_height="55dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="4dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:gravity="center"
@@ -85,15 +86,15 @@
         app:fontFamily="@font/amatic_sc"
         app:layout_constraintBottom_toTopOf="@+id/seekbar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.467"
+        app:layout_constraintHorizontal_bias="0.124"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Spinner
         android:id="@+id/spinner"
-        android:layout_width="210dp"
-        android:layout_height="33dp"
-        android:layout_marginBottom="48dp"
-        android:layout_marginEnd="28dp"
+        android:layout_width="218dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginEnd="40dp"
         android:addStatesFromChildren="false"
         android:gravity="right"
         app:fontFamily="@font/amatic_sc"
@@ -197,7 +198,7 @@
         android:layout_marginStart="8dp"
         android:gravity="center"
         android:text="חם/קר"
-        android:textSize="12sp"
+        android:textSize="16sp"
         app:fontFamily="@font/amatic_sc"
         app:layout_constraintBottom_toTopOf="@+id/first"
         app:layout_constraintEnd_toEndOf="@+id/first"
@@ -213,7 +214,7 @@
         android:layout_marginStart="8dp"
         android:gravity="center"
         android:text="עומק"
-        android:textSize="12sp"
+        android:textSize="16sp"
         app:fontFamily="@font/amatic_sc"
         app:layout_constraintBottom_toTopOf="@+id/third"
         app:layout_constraintEnd_toEndOf="@+id/third"
@@ -229,11 +230,25 @@
         android:layout_marginStart="8dp"
         android:gravity="center"
         android:text="קושי"
-        android:textSize="12sp"
+        android:textSize="16sp"
         app:fontFamily="@font/amatic_sc"
         app:layout_constraintBottom_toTopOf="@+id/second"
         app:layout_constraintEnd_toEndOf="@+id/second"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/second" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="138dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:layout_marginEnd="76dp"
+        android:text="רדיוס מהנקודה בק''מ"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:fontFamily="@font/amatic_sc"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints" />
 
 </android.support.constraint.ConstraintLayout>

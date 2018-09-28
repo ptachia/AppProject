@@ -72,7 +72,7 @@ public class AreaScreen extends Fragment{
         // define spinner
         israel_places = view.findViewById(R.id.spinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(view.getContext(),
-               R.array.places, android.R.layout.simple_spinner_item);
+               R.array.places, R.layout.spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         israel_places.setAdapter(adapter);
         israel_places.setSelection(MainActivity.userData.my_area);

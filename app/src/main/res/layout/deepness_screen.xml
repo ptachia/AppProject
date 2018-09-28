@@ -2,6 +2,7 @@
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:background="@mipmap/main_background"
     android:layout_height="match_parent">
@@ -19,14 +20,12 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="246dp"
-        android:layout_height="450dp"
-        android:layout_marginTop="8dp"
+        android:layout_height="437dp"
         android:background="@mipmap/deepness_back1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/navigate2" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 
     <SeekBar
@@ -155,7 +154,7 @@
         android:layout_marginStart="8dp"
         android:gravity="center"
         android:text="חם/קר"
-        android:textSize="12sp"
+        android:textSize="16sp"
         app:fontFamily="@font/amatic_sc"
         app:layout_constraintBottom_toTopOf="@+id/first"
         app:layout_constraintEnd_toEndOf="@+id/first"
@@ -171,7 +170,7 @@
         android:layout_marginStart="8dp"
         android:gravity="center"
         android:text="איזור"
-        android:textSize="12sp"
+        android:textSize="16sp"
         app:fontFamily="@font/amatic_sc"
         app:layout_constraintBottom_toTopOf="@+id/third"
         app:layout_constraintEnd_toEndOf="@+id/third"
@@ -187,7 +186,7 @@
         android:layout_marginStart="8dp"
         android:gravity="center"
         android:text="קושי"
-        android:textSize="12sp"
+        android:textSize="16sp"
         app:fontFamily="@font/amatic_sc"
         app:layout_constraintBottom_toTopOf="@+id/second"
         app:layout_constraintEnd_toEndOf="@+id/second"
