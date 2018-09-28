@@ -127,7 +127,7 @@ public class MainActivity
             case 15:insertLatLon(userData.ELAT_LAT, userData.ELAT_LON); break;
 
         }
-        textView.setText("testText" + userData.my_lat);//todo remove
+//        textView.setText("testText" + userData.my_lat);//todo remove
     }
 
     public DataForSearch makeDataInstance(){
