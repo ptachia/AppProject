@@ -2,10 +2,10 @@ package com.ptachia.myapplication;
 
 public class DataForSearch {
 
-    double lat, lon;
-    int distance, level, deepness, temperature;
+    private double lat, lon;
+    private int distance, level, deepness, temperature;
 
-    public DataForSearch(){
+    DataForSearch(){
         lat = MainActivity.userData.my_lat;
         lon = MainActivity.userData.my_lon;
         distance = MainActivity.userData.my_distance;
@@ -37,4 +37,5 @@ public class DataForSearch {
     public int getTemperature() {
         return temperature;
     }
+
 }

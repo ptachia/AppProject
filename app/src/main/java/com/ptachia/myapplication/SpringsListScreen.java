@@ -87,6 +87,8 @@ public class SpringsListScreen extends Fragment {
     }
 
     private void prepareSpringsData(){
+        testIt(); //todo test
+
         APIInterface apiInterface = RetrofitClientInstance.getRetrofitInstance().create(APIInterface.class);
         Call<List<RetroSpring>> call = apiInterface.searchSpring(new SearchSpringObj("מעיין")); //todo change prameters..
         call.enqueue(new Callback<List<RetroSpring>>() {
@@ -111,5 +113,27 @@ public class SpringsListScreen extends Fragment {
             springsList.add(retroSpring.get(i));
         }
         mAdapter.notifyDataSetChanged();
+    }
+
+    private void testIt(){ //todo it works well, now we need to transfer data to the springScreen
+        APIInterface apiInterface = RetrofitClientInstance.getRetrofitInstance().create(APIInterface.class);
+        Call<List<RetroSpring>> call = apiInterface.getSpring
+                (new MyTestSearchSpring("Car", "cold", 10, 0, 100,
+                        31.69031, 35.14865)); //todo change prameters..
+        call.enqueue(new Callback<List<RetroSpring>>() {
+
+            @Override
+            public void onResponse(Call<List<RetroSpring>> call, Response<List<RetroSpring>> response) {
+                System.out.println(response.body().get(4).getNameMayan());
+//                generateDataList(response.body());
+            }
+
+            @Override
+            public void onFailure(Call<List<RetroSpring>> call, Throwable t) {
+                System.out.println(t.getMessage());
+                Toast.makeText(getActivity(), "Something got wrong with the search... Sorry. Try Again",
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

@@ -26,12 +26,19 @@ public class RetroSpring {
     @SerializedName("KordintotY")
     @Expose
     private Integer kordintotY;
+    // coordinates for navigating:
+    @SerializedName("wgs84_x")
+    @Expose
+    private Double wgs84_x;
+    @SerializedName("wgs84_y")
+    @Expose
+    private Double wgs84_y;
 
-    public RetroSpring() { }
+    public RetroSpring() {}
 
     public RetroSpring(Integer kayMayan, String nameMayan, String moreNameMayan,
                        String _abstract, String directions, Integer kordintotX,
-                       Integer kordintotY) {
+                       Integer kordintotY, Double wgs84_x, Double wgs84_y) {
         super();
         this.kayMayan = kayMayan;
         this.nameMayan = nameMayan;
@@ -40,6 +47,8 @@ public class RetroSpring {
         this.directions = directions;
         this.kordintotX = kordintotX;
         this.kordintotY = kordintotY;
+        this.wgs84_x = wgs84_x;
+        this.wgs84_y = wgs84_y;
     }
 
     public Integer getKayMayan() {
@@ -96,5 +105,21 @@ public class RetroSpring {
 
     public void setKordintotY(Integer kordintotY) {
         this.kordintotY = kordintotY;
+    }
+
+    public Double getWgs84_x() {
+        return wgs84_x;
+    }
+
+    public void setWgs84_x(Double wgs84_x) {
+        this.wgs84_x = wgs84_x;
+    }
+
+    public Double getWgs84_y() {
+        return wgs84_y;
+    }
+
+    public void setWgs84_y(Double wgs84_y) {
+        this.wgs84_y = wgs84_y;
     }
 }
