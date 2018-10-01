@@ -31,8 +31,9 @@
         android:layout_marginEnd="16dp"
         android:layout_marginTop="8dp"
         android:text="שם המעיין"
-        android:textSize="40sp"
+        android:textSize="45sp"
         app:fontFamily="@font/amatic_sc"
+        android:textColor="#ffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/temp_choice"
@@ -46,12 +47,15 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="הסבר על המעיין"
-        android:textSize="20sp"
+        android:textColor="#ffff"
+        android:textSize="27sp"
         app:fontFamily="@font/amatic_sc"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.7"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spring_name" />
+        app:layout_constraintTop_toBottomOf="@+id/spring_name"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/spring_picture"

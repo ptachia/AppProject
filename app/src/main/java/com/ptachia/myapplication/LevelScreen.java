@@ -10,12 +10,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.SeekBar;
+import android.widget.TextView;
 
 public class LevelScreen extends Fragment {
 
-    SeekBar level_seekbar;
-    Button cold_button, area_button, deepness_button, continue1, continue2, start_search;
-    MainApp.inflateInterface inflate_listener;
+    private SeekBar level_seekbar;
+    private TextView level_indicator;
+    private Button cold_button, area_button, deepness_button, continue1, continue2, start_search;
+    private MainApp.inflateInterface inflate_listener;
 
     @Override
     public void onAttach(Context context) {
@@ -38,12 +40,30 @@ public class LevelScreen extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         level_seekbar = view.findViewById(R.id.seekbar);
-        level_seekbar.setMax(3);
+        level_indicator = view.findViewById(R.id.level_indicator);
+        level_seekbar.setMax(100);
         level_seekbar.setProgress(MainActivity.userData.my_level);
         level_seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                MainActivity.userData.my_level = progress;
+                if (progress == 0){MainActivity.userData.my_level = 0;}
+                if (progress > 0 && progress <= 45) {
+                    MainActivity.userData.my_level = 1;
+                    if (progress <= 20){
+                        level_indicator.setText("" + "משפחתי קליל");
+                    }
+                    else {
+                        level_indicator.setText("" + "משפחתי קל");
+                    }
+                }
+                if (progress > 45 && progress <= 80){
+                    MainActivity.userData.my_level = 2;
+                        level_indicator.setText("" + "4X4");
+                }
+                if (progress > 80){
+                    MainActivity.userData.my_level = 3;
+                    level_indicator.setText(""+"לוחם סיירת");
+                }
             }
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {

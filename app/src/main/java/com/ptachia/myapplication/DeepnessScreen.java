@@ -10,12 +10,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.SeekBar;
+import android.widget.TextView;
 
 public class DeepnessScreen extends Fragment {
 
-    SeekBar deepness_seekbar;
-    Button cold_button, area_button, level_button, start_search, start_search1, start_search2;
-    MainApp.inflateInterface inflate_listener;
+    private SeekBar deepness_seekbar;
+    private TextView deep_ibdicator;
+    private Button cold_button, area_button, level_button, start_search, start_search1, start_search2;
+    private MainApp.inflateInterface inflate_listener;
 
     @Override
     public void onAttach(Context context) {
@@ -38,12 +40,26 @@ public class DeepnessScreen extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         deepness_seekbar = view.findViewById(R.id.seekbar);
-        deepness_seekbar.setMax(3);
+        deep_ibdicator =  view.findViewById(R.id.deep_indicator);
+        deepness_seekbar.setMax(100);
         deepness_seekbar.setProgress(MainActivity.userData.my_deepness);
         deepness_seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                MainActivity.userData.my_deepness = progress;
+                if (progress == 0){MainActivity.userData.my_deepness = 0;}
+                if (progress > 0 && progress <= 25) {
+                    MainActivity.userData.my_deepness = 1;
+                    deep_ibdicator.setText("" + "רדוד");
+
+                }
+                if (progress > 25 && progress <= 60){
+                    MainActivity.userData.my_deepness = 2;
+                    deep_ibdicator.setText("" + "בינוני");
+                }
+                if (progress > 60){
+                    MainActivity.userData.my_deepness = 3;
+                    deep_ibdicator.setText("" + "עמוק");
+                }
             }
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {

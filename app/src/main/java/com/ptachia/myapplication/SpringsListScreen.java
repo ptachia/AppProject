@@ -172,9 +172,9 @@ public class SpringsListScreen extends Fragment {
     private String convertTemplToStr(int my_temperature) {
         switch (my_temperature){
             case 0: return "All";
-            case 1: return "hot";
+            case 1: return "very cold";
             case 2: return "cold";
-            case 3: return "very cold";
+            case 3: return "hot";
         }
         return "All";
     }

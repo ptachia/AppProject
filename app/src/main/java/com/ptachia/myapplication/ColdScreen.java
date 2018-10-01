@@ -10,12 +10,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.SeekBar;
+import android.widget.TextView;
 
 public class ColdScreen extends Fragment {
 
-    SeekBar temprature_seekbar;
-    Button deepness_button, area_button, level_button, continue1, continue2, start_search;
-    MainApp.inflateInterface inflate_listener;
+    private SeekBar temprature_seekbar;
+    private TextView temp_indicator;
+    private Button deepness_button, area_button, level_button, continue1, continue2, start_search;
+    private MainApp.inflateInterface inflate_listener;
 
     @Override
     public void onAttach(Context context) {
@@ -37,12 +39,34 @@ public class ColdScreen extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         temprature_seekbar = view.findViewById(R.id.seekbar);
-        temprature_seekbar.setMax(3);
+        temp_indicator = view.findViewById(R.id.temp_indicator);
+        temprature_seekbar.setMax(100);
         temprature_seekbar.setProgress(MainActivity.userData.my_temprature);
         temprature_seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                MainActivity.userData.my_temprature = progress;
+                if (progress == 0){MainActivity.userData.my_temprature = 0;}
+                if (progress > 0 && progress <= 15) {
+                    MainActivity.userData.my_temprature = 1;
+                    temp_indicator.setText(""+"קפוא");
+
+                }
+                if (progress > 15 && progress <= 85){
+                    MainActivity.userData.my_temprature = 2;
+                    if (progress <= 30){
+                        temp_indicator.setText(""+"קר מאוד");}
+                    else if (progress <= 60){
+                        temp_indicator.setText(""+"קר");}
+                    else{
+                        temp_indicator.setText(""+"נעים");}
+                }
+                if (progress > 85){
+                    MainActivity.userData.my_temprature = 3;
+                    if (progress <= 95){
+                        temp_indicator.setText(""+"חם");}
+                    else {
+                        temp_indicator.setText(""+"לוהט");}
+                }
             }
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
