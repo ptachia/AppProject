@@ -19,14 +19,14 @@
 
     <Button
         android:id="@+id/start"
-        android:layout_width="89dp"
-        android:layout_height="76dp"
+        android:layout_width="97dp"
+        android:layout_height="92dp"
         android:layout_marginBottom="16dp"
         android:layout_marginStart="8dp"
-        android:background="@mipmap/circle"
+        android:background="@mipmap/seekbar_icon"
         android:onClick="StartNav"
-        android:text="נווט"
-        android:textSize="40dp"
+        android:text="start"
+        android:textSize="35dp"
         app:fontFamily="@font/amatic_sc"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
