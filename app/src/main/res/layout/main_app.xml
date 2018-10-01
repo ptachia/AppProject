@@ -13,19 +13,11 @@
         android:id="@+id/area1"
         android:layout_width="180dp"
         android:layout_height="179dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginBottom="44dp"
+        android:layout_marginStart="48dp"
         android:background="@mipmap/icon_area"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.175"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.924" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/deepness1"
@@ -42,29 +34,20 @@
         android:id="@+id/cold1"
         android:layout_width="117dp"
         android:layout_height="126dp"
-        android:layout_marginBottom="60dp"
-        android:layout_marginStart="24dp"
+        android:layout_marginTop="136dp"
         android:background="@mipmap/icon_area"
-        app:layout_constraintBottom_toTopOf="@+id/deepness1"
-        app:layout_constraintStart_toEndOf="@+id/level1" />
+        app:layout_constraintStart_toEndOf="@+id/level1"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/level1"
         android:layout_width="162dp"
-        android:layout_height="164dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_height="167dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="72dp"
         android:background="@mipmap/icon_level"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.151"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.141" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/area2"
@@ -117,10 +100,11 @@
         android:layout_height="46dp"
         android:layout_marginBottom="20dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
+        android:layout_marginTop="8dp"
         android:background="@mipmap/ba_li_maayan"
         app:layout_constraintBottom_toTopOf="@+id/area1"
-        app:layout_constraintEnd_toStartOf="@+id/deepness2" />
+        app:layout_constraintEnd_toStartOf="@+id/deepness2"
+        app:layout_constraintTop_toBottomOf="@+id/level1" />
 
     <Button
         android:id="@+id/start_search"
@@ -146,8 +130,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.534" />
-
-
-
 
 </android.support.constraint.ConstraintLayout>

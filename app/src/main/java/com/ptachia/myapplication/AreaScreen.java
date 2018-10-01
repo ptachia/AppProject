@@ -131,7 +131,8 @@ public class AreaScreen extends Fragment{
         start_search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                inflate_listener.getSpringClicked(true);
+                MainActivity.userData.is_name_search = false;
+                inflate_listener.getSearchClicked();
             }
         });
 

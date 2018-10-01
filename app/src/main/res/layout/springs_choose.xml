@@ -9,6 +9,70 @@
     android:orientation="vertical"
     tools:layout_editor_absoluteY="25dp">
 
+    <TextView
+        android:id="@+id/area_choice2"
+        android:layout_width="84dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="60dp"
+        android:gravity="center"
+        android:textColor="#ffff"
+        android:textSize="18sp"
+        app:fontFamily="@font/amatic_sc"
+        app:layout_constraintEnd_toEndOf="@+id/areaParam"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="@+id/areaParam"
+        app:layout_constraintTop_toTopOf="@+id/areaParam" />
+
+    <TextView
+        android:id="@+id/level_choice2"
+        android:layout_width="49dp"
+        android:layout_height="22dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="60dp"
+        android:gravity="center"
+        android:textColor="#ffff"
+        android:textSize="18sp"
+        app:fontFamily="@font/amatic_sc"
+        app:layout_constraintEnd_toEndOf="@+id/difficultParam"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/difficultParam"
+        app:layout_constraintTop_toTopOf="@+id/difficultParam" />
+
+    <TextView
+        android:id="@+id/temp_choice2"
+        android:layout_width="51dp"
+        android:layout_height="22dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="60dp"
+        android:gravity="center"
+        android:textColor="#ffff"
+        android:textSize="18sp"
+        app:fontFamily="@font/amatic_sc"
+        app:layout_constraintEnd_toEndOf="@+id/tempParam"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tempParam"
+        app:layout_constraintTop_toTopOf="@+id/tempParam" />
+
+    <TextView
+        android:id="@+id/deep_choice2"
+        android:layout_width="54dp"
+        android:layout_height="21dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="60dp"
+        android:gravity="center"
+        android:textColor="#ffff"
+        android:textSize="18sp"
+        app:fontFamily="@font/amatic_sc"
+        app:layout_constraintEnd_toEndOf="@+id/deepParam"
+        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintStart_toStartOf="@+id/deepParam"
+        app:layout_constraintTop_toTopOf="@+id/deepParam" />
+
     <Button
         android:id="@+id/deepParam"
         android:layout_width="60dp"

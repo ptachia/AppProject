@@ -47,37 +47,47 @@ public class UserData {
     public double ELAT_LAT = 29.59282;
     public double ELAT_LON = 34.92889;
 
-    public int my_area;
-    public double my_lat; //latitude
-    public double my_lon; //longitude
+    public int my_area; //number between 0-15. 0 means "my location", 1-15 represent search in other areas (1 means "צפון הגולן ואצבע הגלל" and so on...)
+    public double my_lat; //latitude of "my_area" choice just for search (not for navigate)
+    public double my_lon; //latitude of "my_area" choice just for search (not for navigate)
 
+    public double cur_lat; // always shows user location
+    public double cur_lon; // always shows user location
 
-    public int my_distance;
+    public double my_dest_lat; // will show the dest spring, will be updated after user spring choice
+    public double my_dest_lon; // will show the dest spring, will be updated after user spring choice
 
-    public int my_level;
+    public int my_distance;  // default is 30 km radius around "my_area", changed on area_screen seekbar
 
-    public int my_deepness;
+    public int my_level; // there are 4 levels (0 to 3). default 0 means - search all the levels.
 
-    public int my_temprature;
+    public int my_deepness; // there are 4 deep levels (0 to 3). default 0 means - search all the levels.
+
+    public int my_temprature; // there are 4 temperature levels (0 to 3). default 0 means - search all the levels.
+
+    String spring_name;
+    String sprind_data;
+
+    boolean is_name_search = false;
 
     public UserData(){
         my_area = 0;
-        // 0 means "my location", 1 means "צפון הגולן ואצבע הגלל" and so on...
-
+//        // 0 means "my location", 1 means "צפון הגולן ואצבע הגלל" and so on...
+//
         my_distance = 30;
-        // default is 30 km radius around "my_area", changed on area_screen seekbar
-
+//        // default is 30 km radius around "my_area", changed on area_screen seekbar
+//
         my_level = 0;
-        // there are 4 levels (0 to 3). default 0 means - search all the levels.
-
+//        // there are 4 levels (0 to 3). default 0 means - search all the levels.
+//
         my_deepness = 0;
-        // there are 4 deep levels (0 to 3). default 0 means - search all the levels.
-
+//        // there are 4 deep levels (0 to 3). default 0 means - search all the levels.
+//
         my_temprature = 0;
-        // there are 4 temperature levels (0 to 3). default 0 means - search all the levels.
-
-        my_lat = 0;
-        my_lon = 0;
+//        // there are 4 temperature levels (0 to 3). default 0 means - search all the levels.
+//
+//        my_lat = 0;
+//        my_lon = 0;
 
     }
 

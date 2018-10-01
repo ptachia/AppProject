@@ -27,6 +27,22 @@
         app:layout_constraintVertical_bias="0.017"
         android:elevation="10dp"/>
 
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="203dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:elevation="30dp"
+        android:gravity="left"
+        android:hint="לאיזה מעיין תרצו לקפוץ היום?"
+        android:inputType="textPersonName"
+        android:textSize="25dp"
+        android:visibility="gone"
+        app:fontFamily="@font/amatic_sc"
+        app:layout_constraintStart_toEndOf="@+id/search1"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <FrameLayout
         android:id="@+id/main_fragment"
         android:layout_width="match_parent"
@@ -39,14 +55,5 @@
         app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints">
     </FrameLayout>
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="41dp"
-        android:elevation="10dp"
-        android:textSize="20sp"
-        tools:layout_editor_absoluteX="196dp"
-        tools:layout_editor_absoluteY="28dp" />
 
 </android.support.constraint.ConstraintLayout>

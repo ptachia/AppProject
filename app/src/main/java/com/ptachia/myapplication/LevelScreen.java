@@ -38,7 +38,7 @@ public class LevelScreen extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         level_seekbar = view.findViewById(R.id.seekbar);
-        level_seekbar.setMax(4);
+        level_seekbar.setMax(3);
         level_seekbar.setProgress(MainActivity.userData.my_level);
         level_seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -96,7 +96,8 @@ public class LevelScreen extends Fragment {
         start_search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                inflate_listener.getSpringClicked(true);
+                MainActivity.userData.is_name_search = false;
+                inflate_listener.getSearchClicked();
             }
         });
     }

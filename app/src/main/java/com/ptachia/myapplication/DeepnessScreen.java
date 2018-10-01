@@ -38,7 +38,7 @@ public class DeepnessScreen extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         deepness_seekbar = view.findViewById(R.id.seekbar);
-        deepness_seekbar.setMax(4);
+        deepness_seekbar.setMax(3);
         deepness_seekbar.setProgress(MainActivity.userData.my_deepness);
         deepness_seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -81,21 +81,24 @@ public class DeepnessScreen extends Fragment {
         start_search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                inflate_listener.getSpringClicked(true);
+                MainActivity.userData.is_name_search = false;
+                inflate_listener.getSearchClicked();
             }
         });
         start_search1 = view.findViewById(R.id.half_circle);
         start_search1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                inflate_listener.getSpringClicked(true);
+                MainActivity.userData.is_name_search = false;
+                inflate_listener.getSearchClicked();
             }
         });
         start_search2 = view.findViewById(R.id.half_circle1);
         start_search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                inflate_listener.getSpringClicked(true);
+                MainActivity.userData.is_name_search = false;
+                inflate_listener.getSearchClicked();
             }
         });
     }

@@ -37,7 +37,7 @@ public class ColdScreen extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         temprature_seekbar = view.findViewById(R.id.seekbar);
-        temprature_seekbar.setMax(4);
+        temprature_seekbar.setMax(3);
         temprature_seekbar.setProgress(MainActivity.userData.my_temprature);
         temprature_seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -95,7 +95,8 @@ public class ColdScreen extends Fragment {
         start_search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                inflate_listener.getSpringClicked(true);
+                MainActivity.userData.is_name_search = false;
+                inflate_listener.getSearchClicked();
             }
         });
     }

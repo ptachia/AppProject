@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 public class MainApp extends Fragment {
 
-    Button area1, area2, deepness1, deepness2, cold1, cold2, level1, level2, removeIt, start_search1, start_search2;
+    Button area1, area2, deepness1, deepness2, cold1, cold2, level1, level2, start_search1, start_search2;
     inflateInterface inflate_listener;
 
     public interface inflateInterface{
@@ -21,7 +21,13 @@ public class MainApp extends Fragment {
         public void levelClicked(boolean addToStack);
         public void areaClicked(boolean addToStack);
         public void deepnessClicked(boolean addToStack);
-        public void getSpringClicked(boolean addToStack);
+        public void getSearchClicked();
+        public void getDirectionOnMap();
+        public void getSpringCliched();
+        public String levelToHebrew(int i);
+        public String tempToHebrew(int i);
+        public String areaToHebrew(int i);
+        public String deepToHebrew(int i);
     }
 
     @Override
@@ -108,16 +114,15 @@ public class MainApp extends Fragment {
         start_search1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                inflate_listener.getSpringClicked(true);
+                inflate_listener.getSearchClicked();
             }
         });
         start_search2 = view.findViewById(R.id.start_search1);
         start_search2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                inflate_listener.getSpringClicked(true);
+                inflate_listener.getSearchClicked();
             }
         });
-
     }
 }

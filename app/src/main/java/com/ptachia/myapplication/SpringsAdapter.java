@@ -1,7 +1,10 @@
 package com.ptachia.myapplication;
 
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.support.v7.widget.RecyclerView;
@@ -9,31 +12,41 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TableLayout;
 import android.widget.TextView;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 import java.util.List;
+import java.util.zip.InflaterInputStream;
 
 public class SpringsAdapter extends RecyclerView.Adapter<SpringsAdapter.MyViewHolder> {
 
     private static final String BASE_URL = "https://ppc1.herokuapp.com/";
     private List<RetroSpring> springsList;
+    private Context mContext;
+    MainApp.inflateInterface my_inflate_listener;
 
     class MyViewHolder extends RecyclerView.ViewHolder{
 
         ImageView springImg;
         TextView springTitle, springDescribe;
+        TableLayout spring_item;
 
         MyViewHolder(View view){
             super(view);
             springImg = (ImageView) view.findViewById(R.id.spring_item_img);
             springTitle = (TextView) view.findViewById(R.id.spring_item_title);
             springDescribe = (TextView) view.findViewById(R.id.spring_item_describe);
+            spring_item = view.findViewById(R.id.spring_item__layout);
+
         }
     }
 
-    SpringsAdapter(List<RetroSpring> springsList) {
+    SpringsAdapter(List<RetroSpring> springsList, Context context, MainApp.inflateInterface inflateListener) {
         this.springsList = springsList;
+        mContext = context;
+        my_inflate_listener = inflateListener;
     }
 
     @Override
@@ -46,7 +59,7 @@ public class SpringsAdapter extends RecyclerView.Adapter<SpringsAdapter.MyViewHo
 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, int position) {
-        RetroSpring springItem = springsList.get(position);
+        final RetroSpring springItem = springsList.get(position); // todo check
         Picasso.
                 with(MainActivity.getContext()).
                 load(BASE_URL + "img?id=MayanKAY" + springItem.getKayMayan() + ".jpg")
@@ -68,6 +81,19 @@ public class SpringsAdapter extends RecyclerView.Adapter<SpringsAdapter.MyViewHo
                 });
         holder.springDescribe.setText(springItem.getAbstract()); // Abstract in db Mayan
         holder.springTitle.setText(springItem.getNameMayan()); // NameMayan in db Mayan
+
+        holder.spring_item.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity.userData.spring_name = springItem.getNameMayan();
+                MainActivity.userData.sprind_data = springItem.getAbstract();
+                MainActivity.userData.my_dest_lon = springItem.getWgs84_x();
+                MainActivity.userData.my_dest_lat = springItem.getWgs84_y();
+
+                my_inflate_listener.getSpringCliched();
+
+            }
+        });
     }
 
     @Override
