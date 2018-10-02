@@ -59,7 +59,7 @@ public class SpringsAdapter extends RecyclerView.Adapter<SpringsAdapter.MyViewHo
 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, int position) {
-        final RetroSpring springItem = springsList.get(position); // todo check
+        final RetroSpring springItem = springsList.get(position);
         Picasso.
                 with(MainActivity.getContext()).
                 load(BASE_URL + "img?id=MayanKAY" + springItem.getKayMayan() + ".jpg")
@@ -86,11 +86,12 @@ public class SpringsAdapter extends RecyclerView.Adapter<SpringsAdapter.MyViewHo
             @Override
             public void onClick(View v) {
                 MainActivity.userData.spring_name = springItem.getNameMayan();
-                MainActivity.userData.sprind_data = springItem.getAbstract();
+                MainActivity.userData.spring_data = springItem.getAbstract();
                 MainActivity.userData.my_dest_lon = springItem.getWgs84_x();
                 MainActivity.userData.my_dest_lat = springItem.getWgs84_y();
+                MainActivity.userData.spring_img_id = springItem.getKayMayan();
 
-                my_inflate_listener.getSpringCliched();
+                my_inflate_listener.getSpringClicked();
 
             }
         });

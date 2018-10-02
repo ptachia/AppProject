@@ -1,5 +1,8 @@
 package com.ptachia.myapplication;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class UserData {
 
     public double NORTH_GOLAN_LAT = 33.13456;
@@ -47,9 +50,9 @@ public class UserData {
     public double ELAT_LAT = 29.59282;
     public double ELAT_LON = 34.92889;
 
-    public int my_area; //number between 0-15. 0 means "my location", 1-15 represent search in other areas (1 means "צפון הגולן ואצבע הגלל" and so on...)
-    public double my_lat; //latitude of "my_area" choice just for search (not for navigate)
-    public double my_lon; //latitude of "my_area" choice just for search (not for navigate)
+    public int my_area; // number between 0-15. 0 means "my location", 1-15 represent search in other areas (1 means "צפון הגולן ואצבע הגלל" and so on...)
+    public double my_lat; // latitude of "my_area" choice just for search (not for navigate)
+    public double my_lon; // latitude of "my_area" choice just for search (not for navigate)
 
     public double cur_lat; // always shows user location
     public double cur_lon; // always shows user location
@@ -66,11 +69,12 @@ public class UserData {
     public int my_temprature; // there are 4 temperature levels (0 to 3). default 0 means - search all the levels.
 
     String spring_name;
-    String sprind_data;
+    String spring_data; // todo add directions also (currentlu just abstarct exist)
+    Integer spring_img_id;
 
     boolean is_name_search = false;
 
-    public UserData(){
+    UserData(){
         my_area = 0;
 //        // 0 means "my location", 1 means "צפון הגולן ואצבע הגלל" and so on...
 //
@@ -90,6 +94,4 @@ public class UserData {
 //        my_lon = 0;
 
     }
-
-
 }

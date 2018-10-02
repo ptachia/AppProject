@@ -23,7 +23,7 @@ public class MainApp extends Fragment {
         public void deepnessClicked(boolean addToStack);
         public void getSearchClicked();
         public void getDirectionOnMap();
-        public void getSpringCliched();
+        public void getSpringClicked();
         public String levelToHebrew(int i);
         public String tempToHebrew(int i);
         public String areaToHebrew(int i);

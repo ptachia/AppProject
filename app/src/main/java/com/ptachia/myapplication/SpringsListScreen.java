@@ -100,9 +100,7 @@ public class SpringsListScreen extends Fragment {
         recyclerView.setAdapter(mAdapter);
         if (MainActivity.userData.is_name_search) { // this is search by name
             prepareSpringsData();
-        }
-        else // this is search by parameters
-        {
+        } else { // this is search by parameters
             testIt();
         }
     }
@@ -115,24 +113,29 @@ public class SpringsListScreen extends Fragment {
 
             @Override
             public void onResponse(Call<List<RetroSpring>> call, Response<List<RetroSpring>> response) {
-//                System.out.println(response.body().get(0).getNameMayan());
-                if (response.body().size() == 0){
-                    Toast.makeText(getActivity(), ""+"לא נמצאו התאמות. נסה לשנות את הפרמטרים", Toast.LENGTH_LONG).show();
+                if (response.isSuccessful()) {
+                    if (response.body().size() == 0) {
+                        Toast.makeText(getActivity(), "" + "לא נמצאו התאמות. נסו לשנות את הפרמטרים",
+                                Toast.LENGTH_LONG).show();
+                    } else {
+                        generateDataList(response.body());
+                    }
+                } else {
+                    Toast.makeText(getActivity(), ""+"משהו השתבש במהלך החיפוש, נסו לחפש שוב",
+                            Toast.LENGTH_LONG).show();
                 }
-                else {
-                    generateDataList(response.body());}
             }
 
             @Override
             public void onFailure(Call<List<RetroSpring>> call, Throwable t) {
-//                System.out.println(t.getMessage());
-                Toast.makeText(getActivity(), ""+"משהו השתבש במהלך החיפוש, נסה לחפש שוב",
+                Toast.makeText(getActivity(), ""+"משהו השתבש במהלך החיפוש, נסו לחפש שוב",
                         Toast.LENGTH_LONG).show();
             }
         });
     }
 
     private void generateDataList(List<RetroSpring> retroSpring){
+        springsList.clear();
         for (int i = 0; i < retroSpring.size(); i++){
             springsList.add(retroSpring.get(i));
         }
@@ -145,26 +148,31 @@ public class SpringsListScreen extends Fragment {
                 (new MyTestSearchSpring(convertLevelToStr(MainActivity.userData.my_level),
                         convertTemplToStr(MainActivity.userData.my_temprature),
                         MainActivity.userData.my_distance,
-                        0, // todo doesnt work with 1 value
-                        200, //todo should be replaced by "userdata.my_deepness"
+                        1,
+                        userData.my_deepness,
                         MainActivity.userData.my_lat,
                         MainActivity.userData.my_lon));
 
         call.enqueue(new Callback<List<RetroSpring>>() {
-
             @Override
             public void onResponse(Call<List<RetroSpring>> call, Response<List<RetroSpring>> response) {
-                if (response.body().size() == 0){
-                    Toast.makeText(getActivity(), ""+"לא נמצאו התאמות. נסה לשנות את הפרמטרים", Toast.LENGTH_LONG).show();
+                if (response.isSuccessful()) {
+                    if (response.body().size() == 0) {
+                        Toast.makeText(getActivity(), "" + "לא נמצאו התאמות. נסו לשנות את הפרמטרים",
+                                Toast.LENGTH_LONG).show();
+                    } else {
+                        generateDataList(response.body());
+                    }
+                } else {
+                    Toast.makeText(getActivity(), "" + "משהו השתבש במהלך החיפוש, נסו לחפש שוב",
+                            Toast.LENGTH_LONG).show();
                 }
-                else {
-                generateDataList(response.body());}
             }
 
             @Override
             public void onFailure(Call<List<RetroSpring>> call, Throwable t) {
-                Toast.makeText(getActivity(), ""+"משהו השתבש במהלך החיפוש, נסה לחפש שוב",
-                        Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), ""+"משהו השתבש במהלך החיפוש, נסו לחפש שוב",
+                               Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -188,6 +196,4 @@ public class SpringsListScreen extends Fragment {
         }
         return "All";
     }
-
-
 }

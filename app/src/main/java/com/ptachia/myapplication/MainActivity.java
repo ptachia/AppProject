@@ -1,10 +1,12 @@
 package com.ptachia.myapplication;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.location.Location;
-import android.net.Uri;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -14,7 +16,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity
         extends AppCompatActivity
@@ -23,6 +25,8 @@ public class MainActivity
     Button search;
 
     public static UserData userData = new UserData();
+
+    @SuppressLint("StaticFieldLeak")
     private static Context mContext;
 
     @Override
@@ -41,14 +45,21 @@ public class MainActivity
                     search_by_name.setVisibility(View.VISIBLE);
                 }
                 else {
-                    if (TextUtils.isEmpty((search_by_name.getText())))
-                    {
+                    if (TextUtils.isEmpty((search_by_name.getText()))) {
                         search_by_name.setVisibility(View.GONE);
-                    }else {
-                        search_by_name.setVisibility(View.GONE);
-                        userData.is_name_search = true;
-                        userData.spring_name = search_by_name.getText().toString();
-                        getSearchClicked();
+                    } else {
+                        userData.spring_name = search_by_name.getText().toString().trim();
+                        Pattern pattern = Pattern.compile("[a-zA-Z0-9]+"); // check only hebrew text
+                        Matcher matcher = pattern.matcher(userData.spring_name);
+                        if (matcher.find()) {
+                            Toast.makeText(MainActivity.this,
+                                    ""+"חיפוש לא תקין. נא להכניס אותיות עבריות בלבד",
+                                    Toast.LENGTH_LONG).show();
+                        } else {
+                            search_by_name.setVisibility(View.GONE);
+                            userData.is_name_search = true;
+                            getSearchClicked();
+                        }
                     }
                 }
             }
@@ -103,7 +114,7 @@ public class MainActivity
     }
 
     @Override
-    public void getSpringCliched() {
+    public void getSpringClicked() {
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.main_fragment, new SpringScreen()).addToBackStack(null).commit();
     }

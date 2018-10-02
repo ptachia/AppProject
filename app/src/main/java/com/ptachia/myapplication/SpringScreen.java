@@ -12,7 +12,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Callback;
+import com.squareup.picasso.Picasso;
+
 public class SpringScreen extends Fragment {
+
+    private static final String BASE_URL = "https://ppc1.herokuapp.com/";
 
     ImageView spring_image;
     Button cold_button, level_button, area_button, deepness_button, nav1, nav2;
@@ -39,9 +44,8 @@ public class SpringScreen extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-
         spring_description = view.findViewById(R.id.description);
-        spring_description.setText(MainActivity.userData.sprind_data);
+        spring_description.setText(MainActivity.userData.spring_data);
         spring_name = view.findViewById(R.id.spring_name);
         spring_name.setText(MainActivity.userData.spring_name);
 
@@ -50,13 +54,28 @@ public class SpringScreen extends Fragment {
         area_choice = view.findViewById(R.id.area_choice);
         deep_choice = view.findViewById(R.id.deep_choice);
         if (!MainActivity.userData.is_name_search) {
-            level_choice.setText(""+inflate_listener.levelToHebrew(MainActivity.userData.my_level));
-            temp_choice.setText(""+inflate_listener.tempToHebrew(MainActivity.userData.my_temprature));
-            area_choice.setText(""+inflate_listener.areaToHebrew(MainActivity.userData.my_area));
-            deep_choice.setText(""+inflate_listener.deepToHebrew(MainActivity.userData.my_deepness));
+            level_choice.setText(String.format("%s", inflate_listener.levelToHebrew(MainActivity.userData.my_level)));
+            temp_choice.setText(String.format("%s", inflate_listener.tempToHebrew(MainActivity.userData.my_temprature)));
+            area_choice.setText(String.format("%s", inflate_listener.areaToHebrew(MainActivity.userData.my_area)));
+            deep_choice.setText(String.format("%s", inflate_listener.deepToHebrew(MainActivity.userData.my_deepness)));
         }
 
         spring_image = view.findViewById(R.id.spring_picture);
+        Picasso.
+                with(MainActivity.getContext()).
+                load(BASE_URL + "img?id=MayanKAY" + MainActivity.userData.spring_img_id+ ".jpg")
+                .resize(1080,582)
+                .into(spring_image, new Callback() {
+                    @Override
+                    public void onSuccess() {
+                        System.out.println("success on loading spring img");
+                    }
+
+                    @Override
+                    public void onError() {
+                        System.out.println("failure on loading spring img");
+                    }
+                });
 
         cold_button = view.findViewById(R.id.temprature);
         cold_button.setOnClickListener(new View.OnClickListener() {
