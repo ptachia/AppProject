@@ -5,7 +5,10 @@
     android:background="#2794A8"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+
+    android:layoutDirection="ltr"
+    android:orientation="vertical">
 
 
     <fragment
@@ -24,7 +27,7 @@
         android:layout_height="70dp"
         android:layout_marginBottom="16dp"
         android:layout_marginStart="8dp"
-        android:background="@mipmap/start_nav"
+        android:background="@drawable/circle_drawable"
         android:onClick="StartNav"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

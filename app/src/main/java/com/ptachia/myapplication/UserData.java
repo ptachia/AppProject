@@ -72,7 +72,7 @@ public class UserData {
     public int my_temprature_helper;
 
     String spring_name;
-    String spring_data; // todo add directions also (currentlu just abstarct exist)
+    String spring_data;
     Integer spring_img_id;
 
     boolean is_name_search = false;

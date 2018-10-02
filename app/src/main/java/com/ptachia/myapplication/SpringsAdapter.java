@@ -86,7 +86,7 @@ public class SpringsAdapter extends RecyclerView.Adapter<SpringsAdapter.MyViewHo
             @Override
             public void onClick(View v) {
                 MainActivity.userData.spring_name = springItem.getNameMayan();
-                MainActivity.userData.spring_data = springItem.getAbstract();
+                MainActivity.userData.spring_data = springItem.getAbstract() + "\n\n" + springItem.getDirections();
                 MainActivity.userData.my_dest_lon = springItem.getWgs84_x();
                 MainActivity.userData.my_dest_lat = springItem.getWgs84_y();
                 MainActivity.userData.spring_img_id = springItem.getKayMayan();

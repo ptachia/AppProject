@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,6 +47,8 @@ public class SpringScreen extends Fragment {
 
         spring_description = view.findViewById(R.id.description);
         spring_description.setText(MainActivity.userData.spring_data);
+        spring_description.setMovementMethod(new ScrollingMovementMethod());
+
         spring_name = view.findViewById(R.id.spring_name);
         spring_name.setText(MainActivity.userData.spring_name);
 

@@ -6,7 +6,10 @@
     android:background="#2794A8"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+
+    android:layoutDirection="ltr"
+    android:orientation="vertical">
 
     <Button
         android:id="@+id/search1"
@@ -14,8 +17,6 @@
         android:layout_height="32dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="8dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:background="@mipmap/search"
@@ -27,6 +28,12 @@
         app:layout_constraintVertical_bias="0.017"
         android:elevation="10dp"/>
 
+    <!--<Button-->
+        <!--android:layout_width="30dp"-->
+        <!--android:layout_height="32dp"-->
+        <!--android:id="@+id/about_bt"-->
+        <!--android:background="@drawable/ic_about_black_24dp"/>-->
+
     <EditText
         android:id="@+id/editText"
         android:layout_width="203dp"
@@ -35,9 +42,9 @@
         android:layout_marginTop="8dp"
         android:elevation="30dp"
         android:gravity="bottom"
-        android:hint="לאיזה מעיין תרצו לקפוץ היום?"
+        android:hint="@string/serach_title"
         android:inputType="textPersonName"
-        android:textSize="25dp"
+        android:textSize="25sp"
         android:visibility="gone"
         android:background="@mipmap/rectangle_search"
         app:fontFamily="@font/amatic_sc"
@@ -54,7 +61,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        tools:ignore="MissingConstraints">
+        tools:ignore="MissingConstraints"
+
+        android:layoutDirection="ltr"
+        android:orientation="vertical">
     </FrameLayout>
 
 </android.support.constraint.ConstraintLayout>

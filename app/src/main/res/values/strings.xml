@@ -23,5 +23,16 @@
     <string name="share">שתפו</string>
     <string name="about">אודות</string>
     <string name="title_activity_maps">Map</string>
+    <string name="serach_title">לאיזה מעין תרצו לקפוץ היום?</string>
+    <string name="area_dist_def">30</string>
+    <string name="temp_title">חם/קר</string>
+    <string name="deep_title">עומק</string>
+    <string name="level_title">קושי</string>
+    <string name="dist_slider">רדיוס מהנקודה בק"מ</string>
+    <string name="deep_slider">רדוד/עמוק</string>
+    <string name="level_slider">קליל/קשוח</string>
+    <string name="area_title">איזור</string>
+    <string name="spring_name_placeholder">שם המעין</string>
+    <string name="spring_description_placeholder">הסבר על המעין</string>
 
 </resources>

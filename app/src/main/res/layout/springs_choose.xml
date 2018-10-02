@@ -7,7 +7,9 @@
     android:layout_height="match_parent"
     android:background="@mipmap/main_background"
     android:orientation="vertical"
-    tools:layout_editor_absoluteY="25dp">
+    tools:layout_editor_absoluteY="25dp"
+
+    android:layoutDirection="ltr">
 
     <TextView
         android:id="@+id/area_choice2"
@@ -125,7 +127,6 @@
         android:layout_marginTop="200dp"
         android:scrollbars="vertical"
         android:layoutDirection="rtl"/>
-    <!--todo: all the opposite element - change to ltr-->
 
 
 </android.support.constraint.ConstraintLayout>

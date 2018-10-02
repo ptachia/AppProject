@@ -5,16 +5,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:background="@mipmap/main_background"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:background="@android:color/transparent"
-        android:minHeight="50dp"
-        app:popupTheme="@style/menuStyle"
-        />
+    android:layoutDirection="ltr"
+    android:orientation="vertical">
 
 
     <ImageView
@@ -53,6 +47,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:gravity="center"
+        android:text="@string/deep_slider"
         android:textColor="#ffff"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -79,7 +74,6 @@
         android:id="@+id/navigate2"
         android:layout_width="75dp"
         android:layout_height="85dp"
-        android:layout_marginLeft="80dp"
         android:layout_marginStart="80dp"
         android:layout_marginTop="32dp"
         app:layout_constraintStart_toStartOf="@+id/imageView8"
@@ -90,7 +84,6 @@
         android:id="@+id/third"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="56dp"
         app:layout_constraintStart_toEndOf="@+id/navigate2"
@@ -101,7 +94,6 @@
         android:id="@+id/second"
         android:layout_width="42dp"
         android:layout_height="40dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="56dp"
         app:layout_constraintStart_toEndOf="@+id/third"
@@ -112,7 +104,6 @@
         android:id="@+id/first"
         android:layout_width="42dp"
         android:layout_height="40dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="56dp"
         app:layout_constraintStart_toEndOf="@+id/second"
@@ -175,7 +166,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:gravity="center"
-        android:text="חם/קר"
+        android:text="@string/temp_title"
         android:textSize="16sp"
         app:fontFamily="@font/amatic_sc"
         app:layout_constraintBottom_toTopOf="@+id/first"
@@ -191,7 +182,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:gravity="center"
-        android:text="איזור"
+        android:text="@string/area_title"
         android:textSize="16sp"
         app:fontFamily="@font/amatic_sc"
         app:layout_constraintBottom_toTopOf="@+id/third"
@@ -207,7 +198,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:gravity="center"
-        android:text="קושי"
+        android:text="@string/level_title"
         android:textSize="16sp"
         app:fontFamily="@font/amatic_sc"
         app:layout_constraintBottom_toTopOf="@+id/second"

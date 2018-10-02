@@ -29,7 +29,7 @@ public class GPStracker implements LocationListener{
             lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 3000, 0, this);
             Location l = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
             return l;
-        }else {
+        } else {
             Toast.makeText(context, "please enable GPS", Toast.LENGTH_SHORT).show();
         }
         return null;
