@@ -10,9 +10,9 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="232dp"
+        android:layout_width="match_parent"
         android:layout_height="462dp"
-        android:background="@mipmap/deepness_back1"
+        android:background="@mipmap/deep_bgr"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -20,7 +20,7 @@
 
 
     <SeekBar
-        android:id="@+id/seekbar"
+        android:id="@+id/seekbar1"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginBottom="8dp"
@@ -44,16 +44,16 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:gravity="center"
-        android:text="קר/חם"
+        android:textColor="#ffff"
         android:textSize="30sp"
         android:textStyle="bold"
         app:fontFamily="@font/amatic_sc"
-        android:textColor="#ffff"
-        app:layout_constraintBottom_toTopOf="@+id/seekbar"
+        app:layout_constraintBottom_toTopOf="@+id/seekbar1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.822"
+        app:layout_constraintHorizontal_bias="0.786"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView10" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView10"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
         android:id="@+id/imageView8"
@@ -75,7 +75,7 @@
         android:layout_marginTop="32dp"
         app:layout_constraintStart_toEndOf="@+id/first"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/icon_level" />
+        app:srcCompat="@mipmap/deep_ico" />
 
     <Button
         android:id="@+id/third"
@@ -115,7 +115,7 @@
         android:layout_width="88dp"
         android:layout_height="27dp"
         android:layout_marginBottom="156dp"
-        app:layout_constraintBottom_toTopOf="@+id/seekbar"
+        app:layout_constraintBottom_toTopOf="@+id/seekbar1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@mipmap/fire" />
@@ -128,7 +128,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/seekbar"
+        app:layout_constraintTop_toBottomOf="@+id/seekbar1"
         app:srcCompat="@mipmap/water" />
 
     <ImageView

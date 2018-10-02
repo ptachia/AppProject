@@ -63,10 +63,13 @@ public class UserData {
     public int my_distance;  // default is 30 km radius around "my_area", changed on area_screen seekbar
 
     public int my_level; // there are 4 levels (0 to 3). default 0 means - search all the levels.
+    public int my_level_helper;
 
     public int my_deepness; // there are 4 deep levels (0 to 3). default 0 means - search all the levels.
+    public int my_deepness_helper;
 
     public int my_temprature; // there are 4 temperature levels (0 to 3). default 0 means - search all the levels.
+    public int my_temprature_helper;
 
     String spring_name;
     String spring_data; // todo add directions also (currentlu just abstarct exist)
@@ -75,23 +78,26 @@ public class UserData {
     boolean is_name_search = false;
 
     UserData(){
-        my_area = 0;
+
+
+            my_area = 0;
 //        // 0 means "my location", 1 means "צפון הגולן ואצבע הגלל" and so on...
 //
-        my_distance = 30;
+            my_distance = 30;
 //        // default is 30 km radius around "my_area", changed on area_screen seekbar
 //
-        my_level = 0;
+            my_level = 0;
+            my_level_helper = 0;
 //        // there are 4 levels (0 to 3). default 0 means - search all the levels.
 //
-        my_deepness = 0;
+            my_deepness = 0;
+            my_deepness_helper = 0;
 //        // there are 4 deep levels (0 to 3). default 0 means - search all the levels.
 //
-        my_temprature = 0;
+            my_temprature = 0;
+            my_temprature_helper = 0;
 //        // there are 4 temperature levels (0 to 3). default 0 means - search all the levels.
-//
-//        my_lat = 0;
-//        my_lon = 0;
+
 
     }
 }

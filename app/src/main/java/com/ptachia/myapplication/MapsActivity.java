@@ -101,41 +101,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         float zoomLevel = 9.0f; //This goes up to 21 and determine the start zoom of the map with the route
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(origin, zoomLevel));
         // end of show the route
-
-        // here is code for choosing 2 points on the map and finding roots between them. not sure we will use it at all
-
-//        mMap.setOnMapLongClickListener(new GoogleMap.OnMapLongClickListener() {
-//            @Override
-//            public void onMapLongClick(LatLng latLng) {
-//                //Reset marker when already 2
-//                if (listPoints.size() == 2) {
-//                    listPoints.clear();
-//                    mMap.clear();
-//                }
-//                //Save first point select
-//                listPoints.add(latLng);
-//                //Create marker
-//                MarkerOptions markerOptions = new MarkerOptions();
-//                markerOptions.position(latLng);
-//
-//                if (listPoints.size() == 1) {
-//                    //Add first marker to the map
-//                    markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
-//                } else {
-//                    //Add second marker to the map
-//                    markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
-//                }
-//                mMap.addMarker(markerOptions);
-//
-//                if (listPoints.size() == 2) {
-//                    //Create the URL to get request from first marker to second marker
-//                    String url = getRequestUrl(listPoints.get(0), listPoints.get(1));
-//                    TaskRequestDirections taskRequestDirections = new TaskRequestDirections();
-//                    taskRequestDirections.execute(url);
-//                }
-//            }
-//        });
-
     }
 
     private String getRequestUrl(LatLng origin, LatLng dest) {

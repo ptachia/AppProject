@@ -12,6 +12,9 @@ import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import static com.ptachia.myapplication.MainActivity.*;
+import static com.ptachia.myapplication.MainActivity.userData;
+
 public class ColdScreen extends Fragment {
 
     private SeekBar temprature_seekbar;
@@ -38,35 +41,17 @@ public class ColdScreen extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        temprature_seekbar = view.findViewById(R.id.seekbar);
+        temprature_seekbar = view.findViewById(R.id.seekbar1);
         temp_indicator = view.findViewById(R.id.temp_indicator);
         temprature_seekbar.setMax(100);
-        temprature_seekbar.setProgress(MainActivity.userData.my_temprature);
+        temprature_seekbar.setProgress(userData.my_temprature_helper);
+        putText(userData.my_temprature_helper);
         temprature_seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                if (progress == 0){MainActivity.userData.my_temprature = 0;}
-                if (progress > 0 && progress <= 15) {
-                    MainActivity.userData.my_temprature = 1;
-                    temp_indicator.setText(""+"קפוא");
+                userData.my_temprature_helper = progress;
+                putText(progress);
 
-                }
-                if (progress > 15 && progress <= 85){
-                    MainActivity.userData.my_temprature = 2;
-                    if (progress <= 30){
-                        temp_indicator.setText(""+"קר מאוד");}
-                    else if (progress <= 60){
-                        temp_indicator.setText(""+"קר");}
-                    else{
-                        temp_indicator.setText(""+"נעים");}
-                }
-                if (progress > 85){
-                    MainActivity.userData.my_temprature = 3;
-                    if (progress <= 95){
-                        temp_indicator.setText(""+"חם");}
-                    else {
-                        temp_indicator.setText(""+"לוהט");}
-                }
             }
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
@@ -119,10 +104,37 @@ public class ColdScreen extends Fragment {
         start_search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MainActivity.userData.is_name_search = false;
+                userData.is_name_search = false;
                 inflate_listener.getSearchClicked();
             }
         });
+    }
+
+    private void putText(int progress) {
+        if (progress == 0){
+            userData.my_temprature = 0;
+            temp_indicator.setText(""+"חם/קר");}
+        if (progress > 0 && progress <= 15) {
+            userData.my_temprature = 1;
+            temp_indicator.setText(""+"קפוא");
+
+        }
+        if (progress > 15 && progress <= 85){
+            userData.my_temprature = 2;
+            if (progress <= 30){
+                temp_indicator.setText(""+"קר מאוד");}
+            else if (progress <= 60){
+                temp_indicator.setText(""+"קר");}
+            else{
+                temp_indicator.setText(""+"נעים");}
+        }
+        if (progress > 85){
+            userData.my_temprature = 3;
+            if (progress <= 95){
+                temp_indicator.setText(""+"חם");}
+            else {
+                temp_indicator.setText(""+"לוהט");}
+        }
     }
 
 }

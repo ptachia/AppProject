@@ -15,6 +15,8 @@ import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import static com.ptachia.myapplication.MainActivity.*;
+
 public class AreaScreen extends Fragment{
 
     Spinner israel_places;
@@ -47,13 +49,13 @@ public class AreaScreen extends Fragment{
         radius = view.findViewById(R.id.seekbar);
         radius_range_indicator = view.findViewById(R.id.radiusIndicator);
         radius.setMax(100);
-        radius.setProgress(MainActivity.userData.my_distance);
-        radius_range_indicator.setText(""+MainActivity.userData.my_distance);
+        radius.setProgress(userData.my_distance);
+        radius_range_indicator.setText(""+ userData.my_distance);
         radius.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                MainActivity.userData.my_distance = progress;
-                radius_range_indicator.setText(""+MainActivity.userData.my_distance);
+                userData.my_distance = progress;
+                radius_range_indicator.setText(""+ userData.my_distance);
 
             }
 
@@ -75,12 +77,12 @@ public class AreaScreen extends Fragment{
                R.array.places, R.layout.spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         israel_places.setAdapter(adapter);
-        israel_places.setSelection(MainActivity.userData.my_area);
+        israel_places.setSelection(userData.my_area);
         israel_places.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
             {
-                MainActivity.userData.my_area = position;
+                userData.my_area = position;
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
@@ -131,7 +133,7 @@ public class AreaScreen extends Fragment{
         start_search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MainActivity.userData.is_name_search = false;
+                userData.is_name_search = false;
                 inflate_listener.getSearchClicked();
             }
         });

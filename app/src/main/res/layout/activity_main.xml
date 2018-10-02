@@ -34,11 +34,12 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:elevation="30dp"
-        android:gravity="left"
+        android:gravity="bottom"
         android:hint="לאיזה מעיין תרצו לקפוץ היום?"
         android:inputType="textPersonName"
         android:textSize="25dp"
         android:visibility="gone"
+        android:background="@mipmap/rectangle_search"
         app:fontFamily="@font/amatic_sc"
         app:layout_constraintStart_toEndOf="@+id/search1"
         app:layout_constraintTop_toTopOf="parent" />

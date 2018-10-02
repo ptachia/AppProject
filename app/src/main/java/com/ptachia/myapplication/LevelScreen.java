@@ -12,6 +12,8 @@ import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import static com.ptachia.myapplication.MainActivity.*;
+
 public class LevelScreen extends Fragment {
 
     private SeekBar level_seekbar;
@@ -39,31 +41,16 @@ public class LevelScreen extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        level_seekbar = view.findViewById(R.id.seekbar);
+        level_seekbar = view.findViewById(R.id.seekbar3);
         level_indicator = view.findViewById(R.id.level_indicator);
         level_seekbar.setMax(100);
-        level_seekbar.setProgress(MainActivity.userData.my_level);
+        level_seekbar.setProgress(userData.my_level_helper);
+        putText(userData.my_level_helper);
         level_seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                if (progress == 0){MainActivity.userData.my_level = 0;}
-                if (progress > 0 && progress <= 45) {
-                    MainActivity.userData.my_level = 1;
-                    if (progress <= 20){
-                        level_indicator.setText("" + "משפחתי קליל");
-                    }
-                    else {
-                        level_indicator.setText("" + "משפחתי קל");
-                    }
-                }
-                if (progress > 45 && progress <= 80){
-                    MainActivity.userData.my_level = 2;
-                        level_indicator.setText("" + "4X4");
-                }
-                if (progress > 80){
-                    MainActivity.userData.my_level = 3;
-                    level_indicator.setText(""+"לוחם סיירת");
-                }
+                userData.my_level_helper = progress;
+                putText(progress);
             }
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
@@ -116,10 +103,34 @@ public class LevelScreen extends Fragment {
         start_search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MainActivity.userData.is_name_search = false;
+                userData.is_name_search = false;
                 inflate_listener.getSearchClicked();
             }
         });
+    }
+
+    private void putText(int progress) {
+        if (progress == 0){
+            userData.my_level = 0;
+            level_indicator.setText(""+"קליל/קשוח");
+        }
+        if (progress > 0 && progress <= 45) {
+            userData.my_level = 1;
+            if (progress <= 20){
+                level_indicator.setText("" + "משפחתי קליל");
+            }
+            else {
+                level_indicator.setText("" + "משפחתי קל");
+            }
+        }
+        if (progress > 45 && progress <= 80){
+            userData.my_level = 2;
+            level_indicator.setText("" + "4X4");
+        }
+        if (progress > 80){
+            userData.my_level = 3;
+            level_indicator.setText(""+"לוחם סיירת");
+        }
     }
 
 }

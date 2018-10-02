@@ -12,6 +12,9 @@ import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import static com.ptachia.myapplication.MainActivity.*;
+import static com.ptachia.myapplication.MainActivity.userData;
+
 public class DeepnessScreen extends Fragment {
 
     private SeekBar deepness_seekbar;
@@ -39,27 +42,16 @@ public class DeepnessScreen extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        deepness_seekbar = view.findViewById(R.id.seekbar);
+        deepness_seekbar = view.findViewById(R.id.seekbar2);
         deep_ibdicator =  view.findViewById(R.id.deep_indicator);
         deepness_seekbar.setMax(100);
-        deepness_seekbar.setProgress(MainActivity.userData.my_deepness);
+        deepness_seekbar.setProgress(userData.my_deepness_helper);
+        putText(userData.my_deepness_helper);
         deepness_seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                if (progress == 0){MainActivity.userData.my_deepness = 0;}
-                if (progress > 0 && progress <= 25) {
-                    MainActivity.userData.my_deepness = 1;
-                    deep_ibdicator.setText("" + "רדוד");
-
-                }
-                if (progress > 25 && progress <= 60){
-                    MainActivity.userData.my_deepness = 2;
-                    deep_ibdicator.setText("" + "בינוני");
-                }
-                if (progress > 60){
-                    MainActivity.userData.my_deepness = 3;
-                    deep_ibdicator.setText("" + "עמוק");
-                }
+                userData.my_deepness_helper = progress;
+                putText(progress);
             }
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
@@ -97,7 +89,7 @@ public class DeepnessScreen extends Fragment {
         start_search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MainActivity.userData.is_name_search = false;
+                userData.is_name_search = false;
                 inflate_listener.getSearchClicked();
             }
         });
@@ -105,7 +97,7 @@ public class DeepnessScreen extends Fragment {
         start_search1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MainActivity.userData.is_name_search = false;
+                userData.is_name_search = false;
                 inflate_listener.getSearchClicked();
             }
         });
@@ -113,10 +105,30 @@ public class DeepnessScreen extends Fragment {
         start_search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MainActivity.userData.is_name_search = false;
+                userData.is_name_search = false;
                 inflate_listener.getSearchClicked();
             }
         });
+    }
+
+    private void putText(int progress) {
+        if (progress == 0){
+            userData.my_deepness = 0;
+            deep_ibdicator.setText(""+"רדוד/עמוק");
+        }
+        if (progress > 0 && progress <= 25) {
+            userData.my_deepness = 1;
+            deep_ibdicator.setText("" + "רדוד");
+
+        }
+        if (progress > 25 && progress <= 60){
+            userData.my_deepness = 2;
+            deep_ibdicator.setText("" + "בינוני");
+        }
+        if (progress > 60){
+            userData.my_deepness = 3;
+            deep_ibdicator.setText("" + "עמוק");
+        }
     }
 
 }
