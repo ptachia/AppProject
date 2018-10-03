@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity
@@ -23,7 +24,7 @@ public class MainActivity
         implements MainApp.inflateInterface {
 
     Button search;
-
+    TextView where_s;
     public static UserData userData = new UserData();
 
     @SuppressLint("StaticFieldLeak")
@@ -36,6 +37,8 @@ public class MainActivity
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
 
+
+        where_s = findViewById(R.id.where_s);
         search = findViewById(R.id.search1);
         search.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,10 +46,12 @@ public class MainActivity
                 EditText search_by_name = findViewById(R.id.editText);
                 if (search_by_name.getVisibility() == View.GONE) {
                     search_by_name.setVisibility(View.VISIBLE);
+                    where_s.setVisibility(View.VISIBLE);
                 }
                 else {
                     if (TextUtils.isEmpty((search_by_name.getText()))) {
                         search_by_name.setVisibility(View.GONE);
+                        where_s.setVisibility(View.GONE);
                     } else {
                         userData.spring_name = search_by_name.getText().toString().trim();
                         Pattern pattern = Pattern.compile("[a-zA-Z0-9]+"); // check only hebrew text
@@ -57,6 +62,7 @@ public class MainActivity
                                     Toast.LENGTH_LONG).show();
                         } else {
                             search_by_name.setVisibility(View.GONE);
+                            where_s.setVisibility(View.GONE);
                             userData.is_name_search = true;
                             getSearchClicked();
                         }
@@ -115,6 +121,7 @@ public class MainActivity
 
     @Override
     public void getSpringClicked() {
+        updateGps();
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.main_fragment, new SpringScreen()).addToBackStack(null).commit();
     }

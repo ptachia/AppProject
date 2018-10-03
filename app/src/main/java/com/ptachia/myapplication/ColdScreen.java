@@ -19,7 +19,7 @@ public class ColdScreen extends Fragment {
 
     private SeekBar temprature_seekbar;
     private TextView temp_indicator;
-    private Button deepness_button, area_button, level_button, continue1, continue2, start_search;
+    private Button deepness_button, area_button, level_button, continue1, continue2, go;
     private MainApp.inflateInterface inflate_listener;
 
     @Override
@@ -41,6 +41,7 @@ public class ColdScreen extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        go = view.findViewById(R.id.go);
         temprature_seekbar = view.findViewById(R.id.seekbar1);
         temp_indicator = view.findViewById(R.id.temp_indicator);
         temprature_seekbar.setMax(100);
@@ -55,9 +56,15 @@ public class ColdScreen extends Fragment {
             }
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
+                continue2.setVisibility(View.GONE);
+                continue1.setVisibility(View.GONE);
+                go.setVisibility(View.VISIBLE);
             }
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
+                go.setVisibility(View.GONE);
+                continue2.setVisibility(View.VISIBLE);
+                continue1.setVisibility(View.VISIBLE);
             }
         });
 
@@ -97,15 +104,6 @@ public class ColdScreen extends Fragment {
             @Override
             public void onClick(View v) {
                 inflate_listener.levelClicked(true);
-            }
-        });
-
-        start_search = view.findViewById(R.id.start_search);
-        start_search.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                userData.is_name_search = false;
-                inflate_listener.getSearchClicked();
             }
         });
     }

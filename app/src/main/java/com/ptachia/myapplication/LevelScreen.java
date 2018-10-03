@@ -18,7 +18,7 @@ public class LevelScreen extends Fragment {
 
     private SeekBar level_seekbar;
     private TextView level_indicator;
-    private Button cold_button, area_button, deepness_button, continue1, continue2, start_search;
+    private Button cold_button, area_button, deepness_button, continue1, continue2, go;
     private MainApp.inflateInterface inflate_listener;
 
     @Override
@@ -41,6 +41,7 @@ public class LevelScreen extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        go = view.findViewById(R.id.go);
         level_seekbar = view.findViewById(R.id.seekbar3);
         level_indicator = view.findViewById(R.id.level_indicator);
         level_seekbar.setMax(100);
@@ -54,9 +55,15 @@ public class LevelScreen extends Fragment {
             }
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
+                continue2.setVisibility(View.GONE);
+                continue1.setVisibility(View.GONE);
+                go.setVisibility(View.VISIBLE);
             }
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
+                go.setVisibility(View.GONE);
+                continue2.setVisibility(View.VISIBLE);
+                continue1.setVisibility(View.VISIBLE);
             }
         });
 
@@ -96,15 +103,6 @@ public class LevelScreen extends Fragment {
             @Override
             public void onClick(View v) {
                 inflate_listener.areaClicked(true);
-            }
-        });
-
-        start_search = view.findViewById(R.id.start_search);
-        start_search.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                userData.is_name_search = false;
-                inflate_listener.getSearchClicked();
             }
         });
     }

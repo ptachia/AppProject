@@ -19,7 +19,7 @@ public class DeepnessScreen extends Fragment {
 
     private SeekBar deepness_seekbar;
     private TextView deep_ibdicator;
-    private Button cold_button, area_button, level_button, start_search, start_search1, start_search2;
+    private Button cold_button, area_button, level_button, start_search1, start_search2, go;
     private MainApp.inflateInterface inflate_listener;
 
     @Override
@@ -42,6 +42,8 @@ public class DeepnessScreen extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        go = view.findViewById(R.id.go);
+
         deepness_seekbar = view.findViewById(R.id.seekbar2);
         deep_ibdicator =  view.findViewById(R.id.deep_indicator);
         deepness_seekbar.setMax(100);
@@ -55,9 +57,15 @@ public class DeepnessScreen extends Fragment {
             }
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
+                start_search2.setVisibility(View.GONE);
+                start_search1.setVisibility(View.GONE);
+                go.setVisibility(View.VISIBLE);
             }
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
+                go.setVisibility(View.GONE);
+                start_search2.setVisibility(View.VISIBLE);
+                start_search1.setVisibility(View.VISIBLE);
             }
         });
 
@@ -85,14 +93,6 @@ public class DeepnessScreen extends Fragment {
             }
         });
 
-        start_search = view.findViewById(R.id.start_search);
-        start_search.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                userData.is_name_search = false;
-                inflate_listener.getSearchClicked();
-            }
-        });
         start_search1 = view.findViewById(R.id.half_circle);
         start_search1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -102,7 +102,7 @@ public class DeepnessScreen extends Fragment {
             }
         });
         start_search2 = view.findViewById(R.id.half_circle1);
-        start_search.setOnClickListener(new View.OnClickListener() {
+        start_search2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 userData.is_name_search = false;

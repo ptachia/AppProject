@@ -22,7 +22,7 @@ public class AreaScreen extends Fragment{
     Spinner israel_places;
     SeekBar radius;
     TextView radius_range_indicator;
-    Button deepness_button, cold_button, level_button, continue1, continue2, start_search;
+    Button deepness_button, cold_button, level_button, continue1, continue2, start_search, go;
     MainApp.inflateInterface inflate_listener;
 
     @Override
@@ -45,6 +45,15 @@ public class AreaScreen extends Fragment{
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        continue1 = view.findViewById(R.id.half_circle);
+        continue2 = view.findViewById(R.id.half_circle1);
+        continue1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                inflate_listener.deepnessClicked(true);
+            }
+        });
+        go = view.findViewById(R.id.go);
         // define seekbar
         radius = view.findViewById(R.id.seekbar);
         radius_range_indicator = view.findViewById(R.id.radiusIndicator);
@@ -54,6 +63,7 @@ public class AreaScreen extends Fragment{
         radius.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+
                 userData.my_distance = progress;
                 radius_range_indicator.setText(""+ userData.my_distance);
 
@@ -61,11 +71,17 @@ public class AreaScreen extends Fragment{
 
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
-
+                continue2.setVisibility(View.GONE);
+                continue1.setVisibility(View.GONE);
+                go.setVisibility(View.VISIBLE);
             }
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
+                go.setVisibility(View.GONE);
+                continue2.setVisibility(View.VISIBLE);
+                continue1.setVisibility(View.VISIBLE);
+
 
             }
         });
@@ -114,14 +130,7 @@ public class AreaScreen extends Fragment{
                 inflate_listener.levelClicked(false);
             }
         });
-        continue1 = view.findViewById(R.id.half_circle);
-        continue2 = view.findViewById(R.id.half_circle1);
-        continue1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                inflate_listener.deepnessClicked(true);
-            }
-        });
+
         continue2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

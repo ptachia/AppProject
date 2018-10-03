@@ -28,25 +28,35 @@
         app:layout_constraintVertical_bias="0.017"
         android:elevation="10dp"/>
 
-    <!--<Button-->
-        <!--android:layout_width="30dp"-->
-        <!--android:layout_height="32dp"-->
-        <!--android:id="@+id/about_bt"-->
-        <!--android:background="@drawable/ic_about_black_24dp"/>-->
+
+    <TextView
+        android:id="@+id/where_s"
+        android:layout_width="248dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="12dp"
+        android:background="@mipmap/search2"
+        android:elevation="2dp"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:fontFamily="@font/amatic_sc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editText"
-        android:layout_width="203dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:elevation="30dp"
+        android:layout_width="192dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="16dp"
+        android:background="@null"
+        android:elevation="50dp"
         android:gravity="bottom"
         android:hint="@string/serach_title"
         android:inputType="textPersonName"
         android:textSize="25sp"
         android:visibility="gone"
-        android:background="@mipmap/rectangle_search"
         app:fontFamily="@font/amatic_sc"
         app:layout_constraintStart_toEndOf="@+id/search1"
         app:layout_constraintTop_toTopOf="parent" />
@@ -55,16 +65,17 @@
         android:id="@+id/main_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layoutDirection="ltr"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="MissingConstraints"
 
-        android:layoutDirection="ltr"
-        android:orientation="vertical">
-    </FrameLayout>
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints"/>
+
+
 
 </android.support.constraint.ConstraintLayout>
